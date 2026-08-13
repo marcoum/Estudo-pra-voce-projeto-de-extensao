@@ -8,6 +8,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
 <style>
   :root{
     --bg:#FFFFFF;
@@ -105,21 +107,42 @@
   .menu-toggle span{ width:22px; height:2px; background:var(--ink); border-radius:2px; }
 
   /* ---------- HERO ---------- */
-  .hero{ padding:76px 0 90px; position:relative; }
+  .hero{
+    padding:76px 0 90px; position:relative;
+    background:
+      radial-gradient(1000px 520px at 12% -12%, rgba(27,58,92,0.13), transparent 60%),
+      radial-gradient(760px 420px at 92% 108%, rgba(27,58,92,0.07), transparent 58%),
+      linear-gradient(180deg, #F2F7FC 0%, var(--white) 70%);
+  }
   .hero-grid{ display:grid; grid-template-columns:1.05fr 0.95fr; gap:64px; align-items:start; }
-  .hero h1{ font-size:clamp(34px, 4.2vw, 52px); margin:18px 0 20px; }
+  .hero h1{ font-size:clamp(36px, 4.6vw, 58px); margin:16px 0 20px; color:var(--navy); letter-spacing:-0.02em; }
+  .hero h1 em{ font-style:italic; color:var(--navy); }
+  @supports (background-clip:text) or (-webkit-background-clip:text){
+    .hero h1 em{
+      background:linear-gradient(92deg, var(--navy) 0%, #2E5A8C 55%, #4A7DB5 100%);
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+    }
+  }
   .hero p.lede{ font-size:17.5px; color:var(--ink-soft); max-width:500px; margin-bottom:30px; }
+  .hero-pill{
+    display:inline-flex; align-items:center; gap:8px; margin-top:20px;
+    background:rgba(27,58,92,0.08); border:1px solid rgba(27,58,92,0.18);
+    color:var(--navy); font-weight:700; font-size:12.5px; letter-spacing:0.01em;
+    padding:8px 15px; border-radius:999px;
+  }
+  .hero-pill svg{ width:15px; height:15px; color:var(--amber); flex-shrink:0; }
   .hero-trust{ display:flex; flex-direction:column; gap:12px; margin-top:6px; }
   .hero-trust li{ list-style:none; display:flex; align-items:flex-start; gap:11px; font-size:14.5px; color:var(--ink-soft); }
   .hero-trust svg{ width:17px; height:17px; flex-shrink:0; margin-top:2px; color:var(--red); }
-  .hero-stats{ display:flex; gap:36px; margin-top:38px; padding-top:30px; border-top:1px solid var(--border); }
-  .hero-stat b{ display:block; font-family:'Fraunces', serif; font-size:30px; color:var(--ink); font-weight:600; }
+  .hero-stats{ display:flex; gap:36px; margin-top:38px; padding-top:30px; border-top:1px solid rgba(27,58,92,0.14); }
+  .hero-stat b{ display:block; font-family:'Fraunces', serif; font-size:30px; color:var(--navy); font-weight:600; }
   .hero-stat span{ font-size:12.5px; color:var(--ink-faint); }
 
   /* ---------- LEAD FORM CARD ---------- */
   .lead-card{
-    background:var(--white); border:1px solid var(--border); border-radius:var(--radius-lg);
-    padding:34px; box-shadow:var(--shadow-lg); position:relative;
+    background:linear-gradient(180deg, #F4F8FC 0%, var(--white) 52%);
+    border:1px solid var(--border); border-top:3px solid var(--navy);
+    border-radius:var(--radius-lg); padding:34px; box-shadow:var(--shadow-lg); position:relative;
   }
   .lead-card-head{ margin-bottom:22px; }
   .lead-card-head h3{ font-size:21px; margin-bottom:6px; }
@@ -493,10 +516,11 @@
 
 <section class="hero" id="inicio">
   <div class="container hero-grid">
-    <div class="blob blob-navy pulse-blob" data-parallax="0.15" style="width:520px; height:520px; top:-150px; left:-200px; opacity:.34;"></div>
-    <div class="blob blob-amber fast-blob" data-parallax="0.28" style="width:340px; height:340px; bottom:60px; right:-90px; opacity:.26;"></div>
+    <div class="blob blob-navy pulse-blob" data-parallax="0.15" style="width:520px; height:520px; top:-150px; left:-200px; opacity:.42;"></div>
+    <div class="blob blob-amber fast-blob" data-parallax="0.28" style="width:340px; height:340px; bottom:60px; right:-90px; opacity:.28;"></div>
     <div>
       <span class="eyebrow reveal"><span class="dot"></span>Projeto de extensão · Projeto integrado · PIM</span>
+      <span class="hero-pill reveal"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg> Nota máxima comprovada em prints reais</span>
       <h1 class="reveal">Seu projeto acadêmico, <em>feito do zero até a entrega</em> — você só paga quando aprovar.</h1>
       <p class="lede reveal">Faço projeto de extensão, projeto integrado, portfólio e outras atividades acadêmicas obrigatórias pra quem estuda a distância e não tem tempo — ou não sabe por onde começar.</p>
       <ul class="hero-trust reveal">
