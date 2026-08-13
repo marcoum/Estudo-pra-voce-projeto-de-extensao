@@ -425,7 +425,12 @@
   }
   .scroll-hint svg{ width:16px; height:16px; }
   @keyframes bounce{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(6px); } }
-  @media (max-width:600px){ .no-mobile-hint{ display:none; } }
+  @media (max-width:600px){
+    .no-mobile-hint{ display:none; }
+    .college-photos{ gap:14px; }
+    .college-photo{ width:calc(50% - 7px); }
+    .college-photo img{ height:88px; }
+  }
 
   /* ---------- SECTION TINT ---------- */
   #problema{ background:linear-gradient(160deg, var(--bg) 0%, #fff 100%); }
@@ -1009,6 +1014,7 @@
     </div>
     <div class="footer-bottom">
       <span>© 2026 Estudo Pra Você. Todos os direitos reservados.</span>
+      <span>Feito por Marco <span style="color:var(--red); font-weight:700;">Um</span></span>
       <span>Serviço independente e autônomo. Sem vínculo com as instituições de ensino citadas.</span>
     </div>
   </div>
@@ -1155,14 +1161,14 @@
       tourTimer = setTimeout(tourStep, 500);
     }
     if('IntersectionObserver' in window){
+      let lastY = window.scrollY;
       const io = new IntersectionObserver((entries) => {
         entries.forEach(e => {
-          if(e.isIntersecting){
+          if(e.isIntersecting && window.scrollY > lastY){
             startTour();
-          } else if(e.intersectionRatio === 0){
-            tourPlayed = false;
           }
         });
+        lastY = window.scrollY;
       }, { threshold: 0.25 });
       io.observe(section);
     }
