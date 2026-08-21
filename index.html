@@ -577,7 +577,7 @@
     <div>
       <span class="eyebrow reveal"><span class="dot"></span>Projeto de extensão · Projeto integrado · TCC e monografias</span>
       <span class="hero-pill reveal"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg> Nota máxima comprovada em prints reais</span>
-      <h1 class="reveal">Seu projeto acadêmico, <em>feito do zero até a entrega</em> — você só paga quando aprovar.</h1>
+      <h1 class="reveal">Seu projeto acadêmico, <em>feito do zero até a entrega</em> — você paga quando receber seu trabalho.</h1>
       <p class="lede reveal">Faço projeto de extensão, projeto integrado, portfólio e outras atividades acadêmicas obrigatórias pra quem estuda a distância e não tem tempo — ou não sabe por onde começar.</p>
       <ul class="hero-trust reveal">
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Você só paga depois de aprovar o projeto pronto</li>
@@ -589,7 +589,7 @@
         <div class="hero-stat"><b><span>+</span><span class="counter" data-target="100">0</span></b><span>Cursos</span></div>
         <div class="hero-stat"><b><span>+</span><span class="counter" data-target="1000">0</span></b><span>projetos aprovados</span></div>
       </div>
-      <span class="scroll-hint no-mobile-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 18l7 3 7-3"/></svg> Role para ver mais</span>
+
     </div>
 
     <div id="orcamento" class="lead-card reveal tilt">
@@ -619,6 +619,24 @@
             <input type="text" id="faculdade" placeholder="Ex: Anhanguera">
             <div class="field-error">Qual faculdade?</div>
           </div>
+        </div>
+        <div class="field" id="f-cidade">
+          <label for="cidade">Cidade - Estado</label>
+          <input type="text" id="cidade" placeholder="Ex: Belo Horizonte - MG">
+          <div class="field-error">Informe a cidade e estado.</div>
+        </div>
+        <div class="field" id="f-tipo-projeto">
+          <label for="tipoProjeto">Tipo de projeto</label>
+          <select id="tipoProjeto">
+            <option value="">Selecione...</option>
+            <option value="Extensão">Extensão</option>
+            <option value="Integrado">Integrado</option>
+            <option value="TCC">TCC</option>
+            <option value="Prova">Prova</option>
+            <option value="PIC-PIT">PIC-PIT</option>
+            <option value="Outro">Outro</option>
+          </select>
+          <div class="field-error">Escolha o tipo de projeto.</div>
         </div>
         <div class="field" id="f-prazo">
           <label for="prazo">Prazo de entrega</label>
@@ -687,8 +705,7 @@
       <div class="problem-card"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 21c0-4 4-6 8-6s8 2 8 6M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/></svg></span><p>Trabalho, filhos e faculdade não deixam tempo pra pesquisar e escrever com calma.</p></div>
       <div class="problem-card"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.3 3.9 2.3 18a1.6 1.6 0 0 0 1.4 2.5h16.6a1.6 1.6 0 0 0 1.4-2.5l-8-14a1.6 1.6 0 0 0-2.8 0Z"/></svg></span><p>Medo de reprovar, cair em plágio ou entregar fora das normas.</p></div>
       </div>
-    </div>
-</section>
+        <p class="reveal" style="margin-top:20px; font-weight:600; color:var(--ink);">Pagamento no Pix ou no Cartão de Crédito.</p>
 
 <section class="soft" id="como-funciona">
   <div class="container">
