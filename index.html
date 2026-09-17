@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Estudo Pra Você, Mentoria pro seu projeto de extensão, sem estresse</title>
-<meta name="description" content="Orientação personalizada pra você desenvolver seu projeto de extensão, projeto integrado e trabalhos acadêmicos. Planejamento de pesquisa e feedback sobre o conteúdo escrito pelo estudante.">
+<title>Estudo Pra Você, Mentoria acadêmica sem estresse</title>
+<meta name="description" content="Orientação personalizada pra você desenvolver trabalhos acadêmicos com autonomia. Planejamento de pesquisa e feedback sobre o conteúdo escrito pelo estudante.">
 <link rel="canonical" href="https://estudopravoce.com/">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#C63C2C">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Estudo Pra Você, Mentoria pro seu projeto de extensão, sem estresse">
-<meta property="og:description" content="Orientação personalizada pra você desenvolver seu projeto de extensão, projeto integrado e trabalhos acadêmicos, com plano de estudo e revisão em cada etapa.">
+<meta property="og:title" content="Estudo Pra Você, Mentoria acadêmica sem estresse">
+<meta property="og:description" content="Orientação personalizada pra você desenvolver trabalhos acadêmicos com autonomia, com plano de estudo e revisão em cada etapa.">
 <meta property="og:url" content="https://estudopravoce.com/">
 <meta property="og:site_name" content="Estudo Pra Você">
 <meta property="og:image" content="https://estudopravoce.com/assets/image.webp">
@@ -21,8 +21,8 @@
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Estudo Pra Você, Mentoria pro seu projeto de extensão, sem estresse">
-<meta name="twitter:description" content="Orientação personalizada pra você desenvolver seu projeto de extensão, projeto integrado e trabalhos acadêmicos, com plano de estudo e revisão em cada etapa.">
+<meta name="twitter:title" content="Estudo Pra Você, Mentoria acadêmica sem estresse">
+<meta name="twitter:description" content="Orientação personalizada pra você desenvolver trabalhos acadêmicos com autonomia, com plano de estudo e revisão em cada etapa.">
 <meta name="twitter:image" content="https://estudopravoce.com/assets/image.webp">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -240,7 +240,7 @@
   .step-tag{ display:inline-block; margin-top:12px; font-size:11px; font-weight:700; letter-spacing:0.04em; color:var(--navy); background:#EAF0F6; padding:5px 11px; border-radius:20px; }
 
   /* ---------- SERVICES ---------- */
-  .service-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; }
+  .service-grid{ display:grid; grid-template-columns:repeat(2, 1fr); gap:20px; }
   .service-card{
     background:var(--white); border:1px solid var(--border); border-radius:var(--radius-md); padding:26px 24px;
     transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
@@ -342,13 +342,12 @@
 
   /* ---------- FAB + mobile sticky cta ---------- */
   .fab{
-    position:fixed; right:24px; bottom:24px; z-index:200; background:var(--red); color:var(--white);
-    width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center;
-    box-shadow:0 16px 34px -10px rgba(198,60,44,0.55); transition:transform .25s ease;
+    position:fixed; right:20px; bottom:20px; z-index:200; background:var(--green); color:var(--white);
+    width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    box-shadow:0 8px 20px -6px rgba(21,128,61,0.5); transition:transform .25s ease;
   }
   .fab:hover{ transform:scale(1.08); }
-  .fab svg{ width:26px; height:26px; }
-  .mobile-cta{ display:none; }
+  .fab svg{ width:24px; height:24px; }
 
   /* ---------- REVEAL ---------- */
   .reveal{ opacity:0; transform:translateY(24px) scale(0.985); filter:blur(1px);
@@ -403,7 +402,6 @@
     .final-cta{ padding:50px 26px; }
   }
   @media (max-width:600px){
-    body{ padding-bottom:calc(76px + env(safe-area-inset-bottom)); }
     section{ padding:56px 0; }
     .container{ padding:0 20px; }
     .nav-wrap{ padding:13px 20px; }
@@ -432,14 +430,7 @@
     .footer-cols{ gap:36px; }
     .footer-bottom{ flex-direction:column; align-items:center; text-align:center; gap:8px; }
     .field-row{ grid-template-columns:1fr; }
-    .mobile-cta{
-      display:flex; position:fixed; bottom:0; left:0; right:0; z-index:199;
-      background:var(--white); border-top:1px solid var(--border);
-      padding:12px 16px calc(12px + env(safe-area-inset-bottom));
-      box-shadow:0 -8px 24px -12px rgba(0,0,0,0.15);
-    }
-    .mobile-cta .btn{ width:100%; }
-    .fab{ display:none; }
+    .fab{ display:flex; }
     .final-cta{ padding:42px 22px; }
     .final-cta .btn{ width:100%; }
     .faq-q, .ledger-q{ padding:18px 20px; }
@@ -553,7 +544,7 @@
     content:""; position:absolute; inset:0; border-radius:50%; pointer-events:none;
     animation:fabPulse 2.6s ease-out infinite;
   }
-  @keyframes fabPulse{ 0%{ box-shadow:0 0 0 0 rgba(37,211,102,0.45); } 70%{ box-shadow:0 0 0 16px rgba(37,211,102,0); } 100%{ box-shadow:0 0 0 0 rgba(37,211,102,0); } }
+  @keyframes fabPulse{ 0%{ box-shadow:0 0 0 0 rgba(21,128,61,0.45); } 70%{ box-shadow:0 0 0 16px rgba(21,128,61,0); } 100%{ box-shadow:0 0 0 0 rgba(21,128,61,0); } }
   nav a::after{ content:""; position:absolute; left:0; bottom:0; width:100%; height:2px; border-radius:2px; background:var(--red); transform:scaleX(0); transform-origin:right; transition:transform .3s ease; }
   nav a:hover::after{ transform:scaleX(1); transform-origin:left; }
 </style>
@@ -592,11 +583,9 @@
     <div class="blob blob-navy pulse-blob" data-parallax="0.15" style="width:520px; height:520px; top:-150px; left:-200px; opacity:.42;"></div>
     <div class="blob blob-amber fast-blob" data-parallax="0.28" style="width:340px; height:340px; bottom:60px; right:-90px; opacity:.28;"></div>
     <div>
-      <span class="eyebrow reveal">Projeto de extensão · Projeto integrado · TCC e monografias</span>
+      <span class="eyebrow reveal">Mentoria · Pesquisa · Planejamento</span>
       <span class="hero-pill reveal">Orientação de pesquisa, escrita e aprendizagem</span>
 <h1 class="reveal">Seu projeto, com orientação em cada etapa.</h1>
-      <p class="lede reveal">Organize sua pesquisa, tire dúvidas e receba feedback sobre o conteúdo que você escreve. Você realiza as atividades e desenvolve o próprio trabalho; nós acompanhamos sua aprendizagem, respeitando as regras da sua instituição.</p>
-      <p class="scope-note reveal"><strong>A autoria é sua.</strong> Não fazemos trabalhos ou provas por você. A mentoria oferece explicações, planejamento e feedback sobre o seu próprio conteúdo.</p>
       <ul class="hero-trust reveal">
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Plano de estudo personalizado pro seu tema e sua faculdade</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Revisão e feedback dentro do escopo combinado</li>
@@ -606,46 +595,19 @@
     </div>
 
     <div id="orcamento" class="lead-card reveal tilt">
-      <form class="lead-form" id="leadForm">
-        <div class="lead-card-head">
-          <h2>Peça um diagnóstico gratuito</h2>
-          <p>Preencha seus dados para iniciar a conversa no WhatsApp. O diagnóstico inicial é gratuito; o valor da mentoria é combinado antes da contratação.</p>
-        </div>
-        <div class="field" id="f-nome">
-          <label for="nome">Seu nome</label>
-          <input type="text" id="nome" placeholder="Como você se chama?">
-          <div class="field-error">Conta seu nome pra gente se falar direito.</div>
-        </div>
-        <div class="field" id="f-tipo-projeto">
-          <label for="tipoProjeto">Tipo de projeto</label>
-          <select id="tipoProjeto">
-            <option value="">Selecione...</option>
-            <option value="Extensão">Extensão</option>
-            <option value="Integrado">Integrado</option>
-            <option value="TCC">TCC</option>
-            <option value="Preparação para provas">Preparação para provas (orientação de estudo)</option>
-            <option value="PIC-PIT">PIC-PIT</option>
-            <option value="Outro">Outro</option>
-          </select>
-          <div class="field-error">Escolha o tipo de projeto.</div>
-        </div>
-        <div class="field" id="f-duvida">
-          <label for="duvida">Qual é sua principal dúvida?</label>
-          <input type="text" id="duvida" maxlength="500" placeholder="Ex.: organizar a pesquisa ou revisar citações">
-          <div class="field-error">Conte em que etapa precisa de orientação.</div>
-        </div>
-        <p class="lead-note">Ao continuar, os dados preenchidos irão para sua mensagem no WhatsApp. Você revisa e envia a mensagem no aplicativo.</p>
-<button type="submit" class="btn btn-primary btn-block magnetic" id="leadSubmit">
-  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.1c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.12.11-1.8-.11-.42-.13-.95-.31-1.64-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.26-.28.57-.35.76-.35h.55c.18 0 .42-.07.65.5.24.58.82 2 .89 2.15.07.15.12.32.02.51-.09.19-.14.31-.28.48-.14.16-.29.36-.42.49-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.89 1.05.94 1.94 1.23 2.22 1.37.28.14.45.12.61-.07.17-.19.71-.83.9-1.11.19-.28.38-.23.63-.14.26.09 1.65.78 1.94.92.28.14.47.21.54.33.07.12.07.68-.17 1.36Z"/></svg>
-  Conversar sobre minha mentoria
-</button>
-        <p class="lead-note">Sem compromisso. Primeira conversa de diagnóstico é gratuita.</p>
-      </form>
-      <div class="lead-success" id="leadSuccess">
-        <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" width="24" height="24"><path d="M20 6 9 17l-5-5"/></svg></div>
-        <h3>Prontinho!</h3>
-        <p>Abrindo o WhatsApp com sua mensagem já preenchida...</p>
+      <div class="lead-card-head">
+        <h2>Pedir diagnóstico gratuito</h2>
+        <p>Clique no botão abaixo e fale direto no WhatsApp. O diagnóstico inicial é gratuito; o valor da mentoria é combinado antes da contratação.</p>
       </div>
+      <a href="https://wa.me/5531997813322?text=Oi%2C%20preciso%20de%20orienta%C3%A7%C3%A3o%20com%20um%20projeto%20acad%C3%AAmico."
+         class="btn btn-primary btn-block magnetic"
+         target="_blank"
+         rel="noopener"
+         onclick="gtag('event', 'conversion', {'send_to': 'AW-18025628982/lm1fCNKawescELaKpZND'});">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.1c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.12.11-1.8-.11-.42-.13-.95-.31-1.64-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.26-.28.57-.35.76-.35h.55c.18 0 .42-.07.65.5.24.58.82 2 .89 2.15.07.15.12.32.02.51-.09.19-.14.31-.28.48-.14.16-.29.36-.42.49-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.89 1.05.94 1.94 1.23 2.22 1.37.28.14.45.12.61-.07.17-.19.71-.83.9-1.11.19-.28.38-.23.63-.14.26.09 1.65.78 1.94.92.28.14.47.21.54.33.07.12.07.68-.17 1.36Z"/></svg>
+        Conversar no WhatsApp
+      </a>
+      <p class="lead-note">Sem compromisso. Primeira conversa de diagnóstico é gratuita.</p>
     </div>
   </div>
 </section>
@@ -726,6 +688,7 @@
 
     </div>
 
+
 <section class="soft" id="como-funciona">
   <div class="container">
     <div class="section-head reveal">
@@ -766,6 +729,7 @@
       </div>
     </div>
   </div>
+
 </section>
 
 <section id="servicos">
@@ -775,18 +739,15 @@
       <h2>Mentoria e orientação em trabalhos acadêmicos</h2>
     </div>
     <div class="service-grid reveal">
-      <div class="service-card tilt"><span class="service-num">01</span><h3>Projeto de Extensão</h3><p>Orientação completa do tema à ação prática, com plano de etapas e revisão do que você desenvolve.</p></div>
-      <div class="service-card tilt"><span class="service-num">02</span><h3>Projeto Integrado</h3><p>Orientação para você relacionar as disciplinas do semestre conforme as instruções da sua instituição.</p></div>
-      <div class="service-card tilt"><span class="service-num">03</span><h3>Atividades extensionistas</h3><p>Orientação para você planejar e realizar as atividades extensionistas e registrar sua própria experiência.</p></div>
-      <div class="service-card tilt"><span class="service-num">04</span><h3>Portfólio individual</h3><p>Orientação para você organizar seu portfólio, escrever com autoria própria e citar corretamente as fontes.</p></div>
-      <div class="service-card tilt"><span class="service-num">05</span><h3>Estudos de caso</h3><p>Orientação na análise e estruturação de relatórios técnicos.</p></div>
-      <div class="service-card tilt"><span class="service-num">06</span><h3>Formatação ABNT</h3><p>Revisão de capa, sumário, citações e referências, ponto a ponto.</p></div>
-      <div class="service-card tilt"><span class="service-num">07</span><h3>TCC e monografia</h3><p>Acompanhamento do tema à formatação final, conforme as normas da instituição.</p></div>
-      <div class="service-card tilt"><span class="service-num">08</span><h3>PIC-PIT</h3><p>Orientação do projeto de iniciação científica/tecnológica à execução.</p></div>
-      <div class="service-card tilt"><span class="service-num">09</span><h3>Trabalho Interdisciplinar (TI)</h3><p>Apoio pra organizar e desenvolver o TI integrando as disciplinas do período.</p></div>
-      <div class="service-card tilt"><span class="service-num">10</span><h3>Apoio em dúvidas de exercícios e simulados</h3><p>Explicações e revisão de conteúdo pra reforçar sua preparação.</p></div>
+      <div class="service-card tilt"><span class="service-num">01</span><h3>Projeto comunitário</h3><p>Orientação completa do tema à ação prática, com plano de etapas e revisão.</p></div>
+      <div class="service-card tilt"><span class="service-num">02</span><h3>Projeto interdisciplinar</h3><p>Orientação pra relacionar disciplinas conforme as instruções da instituição.</p></div>
+      <div class="service-card tilt"><span class="service-num">03</span><h3>Trabalho final e monografia</h3><p>Acompanhamento do tema à formatação final, conforme as normas.</p></div>
+      <div class="service-card tilt"><span class="service-num">04</span><h3>Portfólio e relatórios</h3><p>Orientação pra organizar, escrever com autoria e citar fontes.</p></div>
+      <div class="service-card tilt"><span class="service-num">05</span><h3>Formatação ABNT</h3><p>Revisão de capa, sumário, citações e referências.</p></div>
+      <div class="service-card tilt"><span class="service-num">06</span><h3>Iniciação científica</h3><p>Orientação do projeto de pesquisa à execução.</p></div>
     </div>
   </div>
+
 </section>
 
 <section class="soft" id="faculdades">
@@ -809,6 +770,7 @@
       <span class="fac-chip">Una</span>
     </div>
   </div>
+
 </section>
 
 <section id="areas">
@@ -875,6 +837,7 @@
       </div>
     </div>
   </div>
+
 </section>
 
 <section class="soft" id="autoria">
@@ -890,6 +853,7 @@
       <div class="step-card reveal"><h3>Sem promessa de nota</h3><p>Não garantimos aprovação, nota ou aceite pela instituição. A avaliação cabe à faculdade e depende do seu trabalho e dos critérios acadêmicos.</p></div>
     </div>
   </div>
+
 </section>
 
 <section id="diferenciais">
@@ -905,6 +869,7 @@
       <div class="guarantee-card tilt"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></svg></span><div><h3>Cronograma de orientação</h3><p>Combinamos os prazos das orientações e dos feedbacks. A pesquisa, a escrita e a entrega do projeto são realizadas por você.</p></div></div>
     </div>
   </div>
+
 </section>
 
 <section class="soft" id="perguntas">
@@ -936,6 +901,7 @@
       </div>
     </div>
   </div>
+
 </section>
 
 <section>
@@ -944,7 +910,7 @@
       <div class="final-cta-inner">
         <span class="eyebrow">VAMOS PLANEJAR SEUS ESTUDOS?</span>
         <h2>Converse sobre seu projeto e planeje os próximos passos.</h2>
-        <p>Preenche o formulário ou chama direto no WhatsApp pra montar seu plano, sem compromisso.</p>
+        <p>Chama no WhatsApp pra montar seu plano, sem compromisso.</p>
         <a href="https://wa.me/5531997813322?text=Oi%2C%20preciso%20de%20orienta%C3%A7%C3%A3o%20com%20um%20projeto%20acad%C3%AAmico."
    class="btn btn-primary magnetic"
    target="_blank"
@@ -965,7 +931,7 @@
         <img src="assets/logo.webp" alt="Estudo Pra Você" class="footer-logo">
         <div>
           <div class="footer-brand-text">Estudo Pra Você</div>
-          <div style="font-size:12px; margin-top:4px; color:var(--ink-faint);">Mentoria e orientação personalizada para projetos de extensão e trabalhos acadêmicos</div>
+          <div style="font-size:12px; margin-top:4px; color:var(--ink-faint);">Mentoria e orientação personalizada para trabalhos acadêmicos</div>
           <div style="font-size:12px; margin-top:8px; color:var(--ink-soft);"><a href="tel:+5531997813322">(31) 99781-3322</a> · <a href="mailto:estudopravoce@gmail.com">estudopravoce@gmail.com</a></div>
         </div>
       </div>
@@ -1007,10 +973,6 @@
    onclick="gtag('event', 'conversion', {'send_to': 'AW-18025628982/lm1fCNKawescELaKpZND'});">
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.1c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.12.11-1.8-.11-.42-.13-.95-.31-1.64-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.26-.28.57-.35.76-.35h.55c.18 0 .42-.07.65.5.24.58.82 2 .89 2.15.07.15.12.32.02.51-.09.19-.14.31-.28.48-.14.16-.29.36-.42.49-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.89 1.05.94 1.94 1.23 2.22 1.37.28.14.45.12.61-.07.17-.19.71-.83.9-1.11.19-.28.38-.23.63-.14.26.09 1.65.78 1.94.92.28.14.47.21.54.33.07.12.07.68-.17 1.36Z"/></svg>
 </a>
-
-<div class="mobile-cta">
-  <a href="#orcamento" class="btn btn-primary btn-block magnetic">Pedir diagnóstico gratuito</a>
-</div>
 
 <script>
   /* ---------- Progress bar ---------- */
@@ -1095,38 +1057,7 @@
   }, { threshold: 0.5 });
   counters.forEach(c => counterIO.observe(c));
 
-  /* ---------- Lead form ---------- */
-  const leadForm = document.getElementById('leadForm');
-  const leadSuccess = document.getElementById('leadSuccess');
-  const WHATS_NUMBER = '5531997813322';
-
-  leadForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const fields = [
-      { id:'nome', wrap:'f-nome' },
-      { id:'tipoProjeto', wrap:'f-tipo-projeto' },
-      { id:'duvida', wrap:'f-duvida' }
-    ];
-    const values = {};
-    let valid = true;
-    fields.forEach(f => {
-      const el = document.getElementById(f.id);
-      const empty = !el.value.trim();
-      values[f.id] = el.value.trim();
-      document.getElementById(f.wrap).classList.toggle('error', empty);
-      el.setAttribute('aria-invalid', String(empty));
-      if(empty) valid = false;
-    });
-    if(!valid) return;
-    const msg = 'Olá! Meu nome é ' + values.nome + '.\nTipo de projeto: ' + values.tipoProjeto + '\nMinha dúvida: ' + values.duvida + '\n\nQuero conhecer a mentoria para desenvolver meu próprio trabalho.';
-    const link = 'https://wa.me/' + WHATS_NUMBER + '?text=' + encodeURIComponent(msg);
-    if(typeof gtag === 'function') {
-      gtag('event', 'conversion', {'send_to': 'AW-18025628982/lm1fCNKawescELaKpZND'});
-      gtag('event', 'mentoria_form_validated');
-    }
-    window.open(link, '_blank', 'noopener,noreferrer');
-    leadSuccess.classList.add('show');
-  });
+  /* ---------- Lead form (removed - CTA only) ---------- */
 
   /* ---------- Parallax blobs (safe, throttled) ---------- */
   (function(){
@@ -1211,21 +1142,21 @@
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Orientação em Projeto de Extensão"
+          "name": "Orientação em projetos acadêmicos"
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Orientação em Projeto Integrado"
+          "name": "Orientação em projetos interdisciplinares"
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Mentoria de TCC"
+          "name": "Mentoria de trabalho final"
         }
       },
       {
