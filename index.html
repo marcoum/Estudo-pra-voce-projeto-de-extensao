@@ -1,1140 +1,321 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Estudo Pra Você | Mentoria acadêmica</title>
-<meta name="description" content="Mentoria acadêmica para você desenvolver seus próprios estudos. Planejamento, explicações e feedback sobre o conteúdo produzido por você.">
-<link rel="canonical" href="https://estudopravoce.com/">
-<meta name="robots" content="index, follow">
-<meta name="theme-color" content="#C63C2C">
-
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="Estudo Pra Você | Mentoria acadêmica">
-<meta property="og:description" content="Você desenvolve e entrega seus próprios estudos. Receba planejamento, explicações e feedback sobre o conteúdo que produziu.">
-<meta property="og:url" content="https://estudopravoce.com/">
-<meta property="og:site_name" content="Estudo Pra Você">
-<meta property="og:image" content="https://estudopravoce.com/assets/image.png">
-<meta property="og:image:alt" content="Estudo Pra Você - Mentoria e orientação acadêmica">
-<meta property="og:locale" content="pt_BR">
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Estudo Pra Você | Mentoria acadêmica">
-<meta name="twitter:description" content="Você desenvolve e entrega seus próprios estudos. Receba planejamento, explicações e feedback sobre o conteúdo que produziu.">
-<meta name="twitter:image" content="https://estudopravoce.com/assets/image.png">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="assets/image.png">
-  <link rel="apple-touch-icon" href="assets/image.png">
-<style>
-  :root{
-    --bg:#FFFFFF;
-    --bg-soft:#F6F5F1;
-    --ink:#171A1D;
-    --ink-soft:#2C2D2F;
-    --ink-faint:#5A5E62;
-    --navy:#1B3A5C;
-    --navy-ink:#173151;
-    --red:#C63C2C;
-    --red-hover:#AD3223;
-    --red-soft:#FBEBE7;
-    --green:#15803D;
-    --green-soft:#DCFCE7;
-    --amber:#F59E1B;
-    --border:#E7E4DC;
-    --border-soft:#F0EEE7;
-    --white:#FFFFFF;
-    --radius-sm:8px;
-    --radius-md:14px;
-    --radius-lg:22px;
-    --shadow-sm:0 2px 10px rgba(23,26,29,0.05);
-    --shadow-md:0 18px 44px -18px rgba(23,26,29,0.18);
-    --shadow-lg:0 30px 70px -24px rgba(23,26,29,0.22);
-    --ease-out-bouncy:cubic-bezier(.34,1.56,.68,1);
-    --ease-in-bouncy:cubic-bezier(.68,-0.55,.34,1.55);
-    --ease-out:cubic-bezier(.25,.46,.41,.97);
-  }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
-  @media (prefers-reduced-motion: reduce){
-    html{scroll-behavior:auto;}
-    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
-  }
-  body{
-    font-family:'Plus Jakarta Sans', sans-serif;
-    color:var(--ink-soft);
-    background:var(--bg);
-    line-height:1.65;
-    -webkit-font-smoothing:antialiased;
-    -webkit-tap-highlight-color:transparent;
-    overflow-x:hidden;
-  }
-  img{max-width:100%; display:block;}
-  a{color:inherit; text-decoration:none;}
-  button{font-family:inherit;}
-  input, select, textarea{ font-family:inherit; }
-
-  .container{ width:100%; max-width:1180px; margin:0 auto; padding:0 28px; }
-
-  h1,h2,h3,h4{ font-family:'Fraunces', serif; font-weight:600; color:var(--ink); line-height:1.14; letter-spacing:-0.015em; }
-  h1 em, h2 em{ font-style:italic; font-weight:500; color:var(--red); }
-
-  .eyebrow{
-    font-size:12.5px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase;
-    color:var(--red); display:inline-flex; align-items:center; gap:8px;
-  }
-  .eyebrow .dot{ width:6px; height:6px; border-radius:50%; background:var(--red); }
-
-  .btn{
-    display:inline-flex; align-items:center; justify-content:center; gap:10px;
-    font-weight:700; font-size:15px; padding:15px 28px; border-radius:var(--radius-sm);
-    cursor:pointer; border:1.5px solid transparent; transition:transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease, color .2s ease;
-    white-space:nowrap;
-  }
-  .btn-primary{ background:var(--red); color:var(--white); box-shadow:0 14px 28px -12px rgba(198,60,44,0.45); }
-  .btn-primary:hover{ background:var(--red-hover); transform:translateY(-2px); box-shadow:0 18px 32px -12px rgba(198,60,44,0.55); }
-  .btn-ghost{ background:transparent; color:var(--ink); border-color:var(--border); }
-  .btn-ghost:hover{ border-color:var(--ink); }
-  .btn-block{ width:100%; }
-  .btn svg{ width:18px; height:18px; flex-shrink:0; }
-
-  /* ---------- SCROLL PROGRESS ---------- */
-  .progress-bar{ position:fixed; top:0; left:0; height:3px; background:var(--red); width:0%; z-index:300; transition:width .1s ease; }
-
-  /* ---------- HEADER ---------- */
-  header{
-    position:sticky; top:0; z-index:100; background:rgba(255,255,255,0.88);
-    backdrop-filter:blur(10px); border-bottom:1px solid var(--border-soft);
-    transition:transform .3s ease, box-shadow .3s ease, padding .3s ease;
-  }
-  header.hide{ transform:translateY(-100%); }
-  header.scrolled{ box-shadow:0 6px 24px -14px rgba(23,26,29,0.15); }
-  .nav-wrap{ display:flex; align-items:center; justify-content:space-between; padding:16px 28px; max-width:1180px; margin:0 auto; transition:padding .3s ease; }
-  header.scrolled .nav-wrap{ padding:11px 28px; }
-  .brand{ display:flex; align-items:center; gap:11px; }
-  .brand img{ height:30px; width:auto; object-fit:contain; }
-  .brand-text{ font-family:'Fraunces', serif; font-weight:600; font-size:16.5px; color:var(--ink); line-height:1.1; }
-  .brand-text span{ display:block; font-size:11px; color:var(--ink-faint); font-weight:500; margin-top:2px; }
-  nav ul{ display:flex; gap:30px; list-style:none; }
-  nav a{ font-size:14px; font-weight:600; color:var(--ink-soft); position:relative; padding:4px 0; }
-  nav a:hover{ color:var(--ink); }
-  .nav-cta{ display:flex; align-items:center; gap:16px; }
-  .nav-cta .btn{ padding:11px 19px; font-size:13.5px; }
-  .menu-toggle{ display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:6px; }
-  .menu-toggle span{ width:22px; height:2px; background:var(--ink); border-radius:2px; }
-
-  /* ---------- HERO ---------- */
-  .hero{
-    padding:76px 0 90px; position:relative;
-    background:
-      radial-gradient(1000px 520px at 12% -12%, rgba(27,58,92,0.13), transparent 60%),
-      radial-gradient(760px 420px at 92% 108%, rgba(27,58,92,0.07), transparent 58%),
-      linear-gradient(180deg, #F2F7FC 0%, var(--white) 70%);
-  }
-  .hero-grid{ display:grid; grid-template-columns:1.05fr 0.95fr; gap:64px; align-items:start; }
-  .hero h1{ font-size:clamp(36px, 4.6vw, 58px); margin:16px 0 20px; color:var(--navy); letter-spacing:-0.02em; }
-  .hero h1 em{ font-style:italic; color:var(--navy); }
-  @supports (background-clip:text) or (-webkit-background-clip:text){
-    .hero h1 em{
-      background:linear-gradient(92deg, var(--navy) 0%, #2E5A8C 55%, #4A7DB5 100%);
-      -webkit-background-clip:text; background-clip:text; color:transparent;
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Mentoria acadêmica para orientar o estudante a planejar, desenvolver e revisar seus próprios estudos com autoria preservada.">
+  <meta name="robots" content="index, follow">
+  <title>Estudo Pra Você | Mentoria acadêmica</title>
+  <style>
+    :root {
+      --ink: #172033;
+      --muted: #526075;
+      --line: #dce3ed;
+      --surface: #f5f8fb;
+      --accent: #176b57;
+      --accent-dark: #0e4d3f;
     }
-  }
-  .hero p.lede{ font-size:17.5px; color:var(--ink-soft); max-width:500px; margin-bottom:30px; }
-  .hero-pill{
-    display:inline-flex; align-items:center; gap:8px; margin-top:20px;
-    background:rgba(27,58,92,0.2); border:1px solid rgba(27,58,92,0.18);
-    color:var(--navy); font-weight:700; font-size:12.5px; letter-spacing:0.01em;
-    padding:8px 15px; border-radius:999px;
-  }
-  .hero-pill svg{ width:15px; height:15px; color:var(--amber); flex-shrink:0; }
-  .scope-note{ padding:18px 20px; margin:0 0 24px; border-left:3px solid var(--navy); background:#EAF0F6; border-radius:8px; font-size:14px; }
-  .hero-trust{ display:flex; flex-direction:column; gap:12px; margin-top:6px; }
-  .hero-trust li{ list-style:none; display:flex; align-items:flex-start; gap:11px; font-size:14.5px; color:var(--ink-soft); }
-  .hero-trust svg{ width:17px; height:17px; flex-shrink:0; margin-top:2px; color:var(--red); }
-  .hero-stats{ display:flex; gap:36px; margin-top:38px; padding-top:30px; border-top:1px solid rgba(27,58,92,0.14); }
-  .hero-stat b{ display:block; font-family:'Fraunces', serif; font-size:30px; color:var(--navy); font-weight:600; }
-  .hero-stat span{ font-size:12.5px; color:var(--ink-faint); }
 
-  /* ---------- LEAD FORM CARD ---------- */
-  .lead-card{
-    background:linear-gradient(180deg, #F4F8FC 0%, var(--white) 52%);
-    border:1px solid var(--border);
-    border-radius:var(--radius-lg); padding:34px; box-shadow:var(--shadow-lg); position:relative;
-  }
-  .lead-card-head{ margin-bottom:22px; }
-   .lead-card-head h2{ font-size:21px; margin-bottom:6px; }
-  .lead-card-head p{ font-size:13.5px; color:var(--ink-faint); }
-  .field{ margin-bottom:16px; }
-  .field label{ display:block; font-size:12.5px; font-weight:700; color:var(--ink); margin-bottom:7px; }
-  .field input, .field select{
-    width:100%; padding:13px 15px; border:1.5px solid var(--border); border-radius:var(--radius-sm);
-    font-size:14.5px; color:var(--ink); background:var(--bg-soft); transition:border-color .2s ease, background .2s ease;
-  }
-  .field input:focus, .field select:focus{ outline:none; border-color:var(--navy); background:var(--white); }
-  .field.error input, .field.error select{ border-color:var(--red); }
-  .field-error{ font-size:11.5px; color:var(--red); margin-top:5px; display:none; }
-  .field.error .field-error{ display:block; }
-  .field-row{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-  .lead-note{ font-size:11.5px; color:var(--ink-faint); text-align:center; margin-top:14px; }
-  .lead-success{
-    display:none; text-align:center; padding:20px 0;
-  }
-  .lead-success.show{ display:block; }
-  .lead-success .check{
-    width:52px; height:52px; border-radius:50%; background:var(--red-soft); color:var(--red);
-    display:flex; align-items:center; justify-content:center; margin:0 auto 16px;
-    animation:pop .4s cubic-bezier(.3,1.5,.4,1);
-  }
-  @keyframes pop{ 0%{ transform:scale(0); } 70%{ transform:scale(1.15); } 100%{ transform:scale(1); } }
-   .lead-success h3{ font-size:18px; margin-bottom:6px; }
-  .lead-success p{ font-size:13.5px; color:var(--ink-faint); }
-  .lead-form.hide{ display:none; }
-
-  /* ---------- LOGO MARQUEE ---------- */
-  .marquee-section{ padding:44px 0; border-top:1px solid var(--border-soft); border-bottom:1px solid var(--border-soft); background:var(--bg-soft); }
-  .marquee-label{ text-align:center; font-size:12.5px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:24px; }
-  .marquee-track-wrap{ overflow:hidden; position:relative; }
-  .marquee-track-wrap::before, .marquee-track-wrap::after{
-    content:""; position:absolute; top:0; bottom:0; width:80px; z-index:2;
-  }
-  .marquee-track-wrap::before{ left:0; background:linear-gradient(90deg, var(--bg-soft), transparent); }
-  .marquee-track-wrap::after{ right:0; background:linear-gradient(270deg, var(--bg-soft), transparent); }
-  .marquee-track{ display:flex; align-items:center; gap:64px; width:max-content; animation:scrollMarquee 34s linear infinite; }
-  .marquee-track:hover{ animation-play-state:paused; }
-  .marquee-track img{ height:34px; width:auto; object-fit:contain; opacity:0.85; filter:grayscale(15%); }
-  .marquee-badge{
-    flex:0 0 auto; font-size:12.5px; font-weight:700; color:var(--ink-soft);
-    background:var(--white); border:1px solid var(--border); padding:6px 14px; border-radius:20px;
-    box-shadow:var(--shadow-sm);
-  }
-  @keyframes scrollMarquee{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
-
-  /* ---------- SECTIONS ---------- */
-  section{ padding:96px 0; }
-  section.soft{ width:100vw; margin-left:calc(-50vw + 50%); background:var(--bg-soft);}
-  .section-head{ max-width:620px; margin-bottom:52px; }
-  .section-head h2{ font-size:clamp(28px, 3.2vw, 38px); margin-top:14px; }
-  .section-head p{ color:var(--ink-soft); font-size:16px; margin-top:14px; }
-  .section-head.center{ margin-left:auto; margin-right:auto; text-align:center; }
-
-  /* ---------- PROBLEM ---------- */
-  .problem-grid{ display:grid; grid-template-columns:repeat(2, 1fr); gap:1px; background:var(--border); border:1px solid var(--border); border-radius:var(--radius-md); overflow:hidden; }
-  .problem-card{ background:var(--white); padding:24px 26px; display:flex; gap:14px; align-items:flex-start; }
-  .problem-card .ico{ flex-shrink:0; width:34px; height:34px; border-radius:50%; background:var(--red-soft); color:var(--red); display:flex; align-items:center; justify-content:center; }
-  .problem-card .ico svg{ width:16px; height:16px; }
-  .problem-card p{ font-size:15px; color:var(--ink); font-weight:500; padding-top:4px; }
-  .problem-note{ margin-top:36px; font-family:'Fraunces', serif; font-style:italic; font-size:19px; color:var(--ink); text-align:center; max-width:560px; margin-left:auto; margin-right:auto; }
-
-  /* ---------- PROCESS ---------- */
-  .steps{ counter-reset:step; display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; }
-  .step-card{ background:var(--white); border:1px solid var(--border); border-radius:var(--radius-md); padding:28px 24px; position:relative; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
-  .step-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow-md); border-color:transparent; }
-  .step-num{ font-family:'Fraunces', serif; font-size:34px; font-weight:600; color:var(--red); margin-bottom:14px; }
-  .step-card h3{ font-size:17.5px; margin-bottom:8px; }
-  .step-card p{ font-size:14px; color:var(--ink-soft); }
-  .step-tag{ display:inline-block; margin-top:12px; font-size:11px; font-weight:700; letter-spacing:0.04em; color:var(--navy); background:#EAF0F6; padding:5px 11px; border-radius:20px; }
-
-  /* ---------- SERVICES ---------- */
-  .service-grid{ display:grid; grid-template-columns:repeat(2, 1fr); gap:20px; }
-  .service-card{
-    background:var(--white); border:1px solid var(--border); border-radius:var(--radius-md); padding:26px 24px;
-    transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-  }
-  .service-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow-md); border-color:transparent; }
-  .service-num{ font-size:12px; font-weight:700; color:var(--ink-faint); margin-bottom:12px; display:block; }
-  .service-card h3{ font-size:17.5px; margin-bottom:8px; }
-  .service-card p{ font-size:14px; color:var(--ink-soft); }
-
-  /* ---------- FACULTIES GRID ---------- */
-  .fac-grid{ display:grid; grid-template-columns:repeat(5, 1fr); gap:16px; }
-  .fac-card{
-    background:var(--white); border:1px solid var(--border); border-radius:var(--radius-md);
-    padding:22px 14px; display:flex; flex-direction:column; align-items:center; gap:12px; text-align:center;
-    transition:transform .25s ease, box-shadow .25s ease;
-  }
-  .fac-card:hover{ transform:translateY(-3px); box-shadow:var(--shadow-sm); }
-  .fac-card img{ height:30px; width:auto; max-width:80%; object-fit:contain; }
-  .fac-card span{ font-size:12.5px; font-weight:600; color:var(--ink-soft); }
-
-  /* ---------- COURSE LEDGER ---------- */
-  .ledger{ background:var(--white); border:1px solid var(--border); border-radius:var(--radius-md); overflow:hidden; max-width:900px; margin:0 auto; }
-  .ledger-row{ border-bottom:1px solid var(--border); }
-  .ledger-row:last-child{ border-bottom:none; }
-  .ledger-q{
-    width:100%; display:flex; justify-content:space-between; align-items:center; gap:20px;
-    background:none; border:none; text-align:left; cursor:pointer; padding:20px 26px; transition:background .2s ease;
-  }
-  .ledger-q:hover{ background:var(--bg-soft); }
-  .ledger-q .area-name{ font-family:'Fraunces', serif; font-weight:600; font-size:17px; color:var(--ink); }
-  .ledger-q .area-count{ font-size:12px; color:var(--ink-faint); display:flex; align-items:center; gap:14px; }
-  .ledger-q .plus{ font-size:18px; color:var(--red); flex-shrink:0; transition:transform .3s ease; font-weight:700; }
-  .ledger-row.open .plus{ transform:rotate(45deg); }
-  .ledger-a{ max-height:0; overflow:hidden; transition:max-height .35s ease; }
-  .ledger-a-inner{ padding:0 26px 22px; display:flex; flex-wrap:wrap; gap:8px; }
-  .course-pill{ font-size:12.5px; padding:6px 12px; background:var(--bg-soft); border:1px solid var(--border); color:var(--ink-soft); border-radius:20px; }
-
-  /* ---------- GUARANTEES ---------- */
-  .guarantee-grid{ display:grid; grid-template-columns:repeat(2, 1fr); gap:20px; }
-  .guarantee-card{ display:flex; gap:18px; padding:26px; background:var(--white); border:1px solid var(--border); border-radius:var(--radius-md); }
-  .guarantee-card .ico{ flex-shrink:0; width:44px; height:44px; border-radius:50%; background:#EAF0F6; color:var(--navy); display:flex; align-items:center; justify-content:center; }
-  .guarantee-card .ico svg{ width:20px; height:20px; }
-   .guarantee-card h3{ font-size:16.5px; margin-bottom:6px; }
-  .guarantee-card p{ font-size:14px; color:var(--ink-soft); }
-
-  /* ---------- FAQ ---------- */
-  .faq-list{ max-width:760px; margin:0 auto; background:var(--white); border:1px solid var(--border); border-radius:var(--radius-md); overflow:hidden; }
-  .faq-item{ border-bottom:1px solid var(--border); }
-  .faq-item:last-child{ border-bottom:none; }
-  .faq-q{
-    width:100%; text-align:left; background:none; border:none; padding:22px 26px;
-    display:flex; justify-content:space-between; align-items:center; cursor:pointer; gap:20px; transition:background .2s ease;
-  }
-  .faq-q:hover{ background:var(--bg-soft); }
-  .faq-q span.txt{ font-family:'Fraunces', serif; font-size:16.5px; color:var(--ink); }
-  .faq-q .plus{ font-size:18px; color:var(--red); flex-shrink:0; transition:transform .3s ease; font-weight:700; }
-  .faq-item.open .plus{ transform:rotate(45deg); }
-  .faq-a{ max-height:0; overflow:hidden; transition:max-height .35s ease; }
-  .faq-a-inner{ padding:0 26px 22px; color:var(--ink-soft); font-size:14.5px; max-width:600px; }
-
-  /* ---------- FINAL CTA ---------- */
-  .final-cta{ background:var(--navy); border-radius:var(--radius-lg); padding:64px 50px; text-align:center; position:relative; overflow:hidden; }
-  .final-cta-inner{ position:relative; }
-  .final-cta .eyebrow{ color:#F0AC9E; justify-content:center; }
-  .final-cta .eyebrow .dot{ background:#F0AC9E; }
-  .final-cta h2{ color:var(--white); font-size:clamp(26px, 3.6vw, 38px); margin:16px auto 16px; max-width:600px; }
-  .final-cta p{ color:#C9D2DC; max-width:480px; margin:0 auto 30px; font-size:15.5px; }
-
-  /* ---------- FOOTER ---------- */
-  footer{ padding:56px 0 28px; border-top:1px solid var(--border-soft); }
-  .footer-top{ display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:40px; padding-bottom:36px; border-bottom:1px solid var(--border-soft); }
-  .footer-brand{ display:flex; align-items:center; gap:11px; }
-  .footer-brand img.footer-logo{ height:34px; width:auto; object-fit:contain; }
-  .footer-brand-text{ font-family:'Fraunces', serif; color:var(--ink); font-size:16px; }
-  .footer-cols{ display:flex; gap:64px; flex-wrap:wrap; }
-   .footer-col h3{ font-size:11.5px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:14px; }
-  .footer-col ul{ list-style:none; display:flex; flex-direction:column; gap:9px; }
-  .footer-col a{ font-size:13.5px; color:var(--ink-soft); transition:color .2s ease; }
-  .footer-col a:hover{ color:var(--ink); }
-  .footer-bottom{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; padding-top:22px; font-size:12px; color:var(--ink-faint); }
-
-  /* ---------- FAB + mobile sticky cta ---------- */
-  .fab{
-    position:fixed; right:20px; bottom:20px; z-index:200; background:var(--green); color:var(--white);
-    width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center;
-    box-shadow:0 8px 20px -6px rgba(21,128,61,0.5); transition:transform .25s ease;
-  }
-  .fab:hover{ transform:scale(1.08); }
-  .fab svg{ width:24px; height:24px; }
-
-  /* ---------- REVEAL ---------- */
-  .reveal{ opacity:0; transform:translateY(24px) scale(0.985); filter:blur(1px);
-    transition:opacity .72s cubic-bezier(.2,.75,.4,1.05), transform .72s cubic-bezier(.2,.75,.4,1.05), filter .72s ease; }
-  .reveal.is-visible{ opacity:1; transform:translateY(0) scale(1); filter:blur(0); }
-  .stag.in-view > *:nth-child(1){ transition-delay:.06s; }
-  .stag.in-view > *:nth-child(2){ transition-delay:.12s; }
-  .stag.in-view > *:nth-child(3){ transition-delay:.18s; }
-  .stag.in-view > *:nth-child(4){ transition-delay:.24s; }
-  .stag.in-view > *:nth-child(5){ transition-delay:.30s; }
-  .stag.in-view > *:nth-child(6){ transition-delay:.36s; }
-  .stag.in-view > *:nth-child(7){ transition-delay:.42s; }
-  .stag.in-view > *:nth-child(8){ transition-delay:.48s; }
-  .stag.in-view > *:nth-child(9){ transition-delay:.54s; }
-  .stag.in-view > *:nth-child(10){ transition-delay:.60s; }
-  .stag.in-view > *:nth-child(11){ transition-delay:.66s; }
-  .stag.in-view > *:nth-child(12){ transition-delay:.72s; }
-
-  /* ---------- RESPONSIVE ---------- */
-  @media (max-width:980px){
-    .menu-toggle{ display:flex; }
-    nav ul{
-      position:fixed; top:0; left:0; right:0; z-index:150; margin:0;
-      display:flex; flex-direction:column; gap:0; list-style:none;
-      background:var(--white); border-bottom:1px solid var(--border);
-      padding:96px 24px 28px; max-height:100dvh; overflow-y:auto;
-      box-shadow:0 40px 60px -24px rgba(23,26,29,0.28);
-      opacity:0; transform:translateY(-12px); pointer-events:none;
-      transition:opacity .28s ease, transform .28s ease;
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #fff;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
     }
-    nav ul.open{ opacity:1; transform:translateY(0); pointer-events:auto; }
-    nav ul a{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:17px 4px; font-size:17px; font-weight:700; color:var(--ink);
-      border-bottom:1px solid var(--border-soft);
+
+    a { color: inherit; }
+    .container { width: min(100% - 40px, 920px); margin: 0 auto; }
+    .site-header { border-bottom: 1px solid var(--line); background: #fff; }
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      min-height: 72px;
     }
-    nav ul li:last-child a{ border-bottom:none; }
-    nav ul a::after{ content:"→"; position:static; width:auto; height:auto; transform:none; background:none; color:var(--red); font-size:18px; font-weight:800; }
-    nav ul a:hover::after{ transform:none; }
-    .menu-toggle span{ transition:transform .3s ease, opacity .2s ease; }
-    .menu-toggle.open span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
-    .menu-toggle.open span:nth-child(2){ opacity:0; }
-    .menu-toggle.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
-    body.menu-open{ overflow:hidden; }
-    body.menu-open header{ z-index:160; }
-    .hero-grid{ grid-template-columns:1fr; }
-    .problem-grid{ grid-template-columns:1fr; }
-    .steps{ grid-template-columns:1fr 1fr; }
-    .service-grid{ grid-template-columns:1fr 1fr; }
-    .fac-grid{ grid-template-columns:repeat(3, 1fr); }
-    .guarantee-grid{ grid-template-columns:1fr; }
-    .final-cta{ padding:50px 26px; }
-  }
-  @media (max-width:600px){
-    section{ padding:56px 0; }
-    .container{ padding:0 20px; }
-    .nav-wrap{ padding:13px 20px; }
-    header.scrolled .nav-wrap{ padding:9px 20px; }
-    .nav-cta .btn{ display:none; }
-    .brand-text span{ display:none; }
-    .hero{ padding:40px 0 56px; }
-    .hero-grid{ gap:42px; }
-    .hero h1{ font-size:clamp(30px, 8.4vw, 58px); margin:14px 0 16px; }
-    .hero p.lede{ font-size:16px; }
-    .hero-stats{
-      display:grid; grid-template-columns:repeat(3, 1fr); gap:10px; text-align:center;
-      margin-top:32px; padding-top:24px;
+
+    .brand {
+      color: var(--ink);
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: .01em;
+      text-decoration: none;
     }
-    .hero-stat b{ font-size:23px; }
-    .hero-stat span{ font-size:11px; line-height:1.35; display:block; }
-    .lead-card{ padding:24px 20px; }
-    .section-head{ margin-bottom:38px; }
-    .section-head h2{ font-size:clamp(26px, 7vw, 38px); }
-    .steps{ grid-template-columns:1fr; }
-    .step-card, .service-card{ padding:24px 20px; }
-    .service-grid{ grid-template-columns:1fr; }
-    .fac-grid{ grid-template-columns:repeat(2, 1fr); }
-    .guarantee-card{ padding:22px 20px; }
-    .footer-top{ flex-direction:column; gap:32px; }
-    .footer-cols{ gap:36px; }
-    .footer-bottom{ flex-direction:column; align-items:center; text-align:center; gap:8px; }
-    .field-row{ grid-template-columns:1fr; }
-    .fab{ display:flex; }
-    .final-cta{ padding:42px 22px; }
-    .final-cta .btn{ width:100%; }
-    .faq-q, .ledger-q{ padding:18px 20px; }
-    .faq-a-inner{ padding:0 20px 20px; }
-    .ledger-a-inner{ padding:0 20px 18px; }
-    .carousel-track.stag{ gap:14px; }
-    .marquee-section{ padding:34px 0; }
-    .marquee-track{ gap:40px; }
-    .eyebrow{ flex-wrap:wrap; }
-  }
 
-  /* ---------- SCROLL PARALLAX BLOBS (enhanced motion) ---------- */
-  .hero{ overflow:hidden; }
-  .blob{
-    position:absolute; border-radius:50%; pointer-events:none;
-    background:radial-gradient(farthest-side, var(--amber), transparent 70%);
-    background-size:200% 200%; animation:floatBlob 34s ease-in-out infinite;
-  }
-  .blob.blob-navy{ background:radial-gradient(farthest-side, var(--navy), transparent 72%); }
-  .blob.blob-amber{ background:radial-gradient(farthest-side, #F59E1B, transparent 70%); }
-  .blob.float-blob{ animation-duration:40s; }
-  .blob.fast-blob{ animation-duration:26s; }
-  @keyframes floatBlob{
-    0%,100%{ transform:translateY(0) scale(1) rotate(0deg); }
-    48%{ transform:translateY(-18px) scale(1.02) rotate(6deg); }
-    52%{ transform:translateY(-22px) scale(0.99) rotate(-5deg); }
-    100%{ transform:translateY(0) scale(1) rotate(0deg); }
-  }
-  @keyframes pulseBlob{ 0%,100%{ opacity:.28; } 50%{ opacity:.16; } }
-  .pulse-blob{ animation:pulseBlob 6s ease-in-out infinite; }
+    .header-link {
+      color: var(--accent-dark);
+      font-size: .94rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
 
-  /* ---------- COLLEGE PHOTOS ---------- */
-  .college-photos{ display:flex; flex-wrap:wrap; gap:24px; justify-content:center; position:relative; z-index:1; }
-  .college-photo{
-    height:140px; flex:0 0 auto;
-    transition:transform .38s var(--ease-out-bouncy), box-shadow .38s ease;
-  }
-  @media (prefers-reduced-motion: no-preference){
-    .stag.in-view .college-photo:nth-child(1){ animation-delay:.06s; }
-    .stag.in-view .college-photo:nth-child(2){ animation-delay:.12s; }
-    .stag.in-view .college-photo:nth-child(3){ animation-delay:.18s; }
-    .stag.in-view .college-photo:nth-child(4){ animation-delay:.24s; }
-    .stag.in-view .college-photo:nth-child(5){ animation-delay:.30s; }
-  }
-  .college-photo:hover{ transform:rotate(0deg) translateY(-7px) scale(1.03); box-shadow:var(--shadow-lg); z-index:2; position:relative; }
-  .college-photo img{ width:100%; height:120px; object-fit:cover; border-radius:10px; background:var(--bg-soft); display:block; }
-  .college-photo figcaption{ font-family:'Fraunces', serif; font-size:14.5px; font-weight:600; color:var(--ink); text-align:center; margin-top:10px; }
-  .more-fac{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:34px; position:relative; z-index:1; }
-  .fac-chip{ font-size:12.5px; font-weight:600; color:var(--ink-soft); background:var(--white); border:1px solid var(--border); padding:7px 15px; border-radius:20px; box-shadow:var(--shadow-sm); }
+    .header-link:hover,
+    .header-link:focus-visible { text-decoration: underline; }
 
-  /* ---------- SCROLL HINT ---------- */
-  .scroll-hint{
-    display:inline-flex; align-items:center; gap:8px; font-size:12.5px; color:var(--ink-faint);
-    margin:6px auto 0;
-  }
-  .scroll-hint svg{ width:16px; height:16px; }
-  /* bounce animation removed */
-  @media (max-width:600px){
-    .no-mobile-hint{ display:none; }
-    .college-photos{ gap:14px; }
-    .college-photo{ width:calc(50% - 7px); }
-    .college-photo img{ height:88px; }
-  }
+    .hero { padding: 72px 0 54px; border-bottom: 1px solid var(--line); }
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--accent-dark);
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
 
-  /* ---------- SECTION TINT ---------- */
-  #problema{ background:linear-gradient(160deg, var(--bg) 0%, #fff 100%); padding: 96px 0 0 0;}
-  .sem-tempo{ margin-bottom:50px; }
-  #diferenciais{ background:linear-gradient(160deg, var(--bg-soft) 0%, #fff 100%); width:100vw; margin-left:calc(-50vw + 50%); }
+    h1, h2, h3 { line-height: 1.2; }
+    h1 {
+      max-width: 720px;
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 3.3rem);
+      letter-spacing: -.035em;
+    }
 
-  /* ---------- IMPRESSIVE FX (clean, subtle) ---------- */
-  #spotlight{
-    position:fixed; inset:0; z-index:1; pointer-events:none; opacity:0; transition:opacity .5s ease;
-    background:radial-gradient(520px circle at var(--mx,50%) var(--my,40%), rgba(27,58,92,0.06), transparent 70%);
-  }
-  #spotlight.on{ opacity:1; }
-  .tilt{ will-change:transform; }
-  .carousel-track.stag{ cursor:grab; }
-  .carousel-track.stag.dragging{ cursor:grabbing; scroll-snap-type:none; user-select:none; -webkit-user-select:none; }
-  .carousel-track.stag img{ -webkit-user-drag:none; user-select:none; pointer-events:none; }
-  .btn-primary{ position:relative; overflow:hidden; }
-  .btn-primary::after{
-    content:""; position:absolute; top:0; left:-80%; width:50%; height:100%;
-    background:linear-gradient(105deg, transparent, rgba(255,255,255,0.38), transparent);
-    transform:skewX(-22deg); animation:shimmer 3.6s ease-in-out infinite; pointer-events:none;
-  }
-  @keyframes shimmer{ 0%{ left:-80%; } 55%{ left:140%; } 100%{ left:140%; } }
-  .fab::before{
-    content:""; position:absolute; inset:0; border-radius:50%; pointer-events:none;
-    animation:fabPulse 2.6s ease-out infinite;
-  }
-  @keyframes fabPulse{ 0%{ box-shadow:0 0 0 0 rgba(21,128,61,0.45); } 70%{ box-shadow:0 0 0 16px rgba(21,128,61,0); } 100%{ box-shadow:0 0 0 0 rgba(21,128,61,0); } }
-  nav a::after{ content:""; position:absolute; left:0; bottom:0; width:100%; height:2px; border-radius:2px; background:var(--red); transform:scaleX(0); transform-origin:right; transition:transform .3s ease; }
-  nav a:hover::after{ transform:scaleX(1); transform-origin:left; }
-</style>
+    .lead {
+      max-width: 700px;
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: 1.14rem;
+    }
+
+    .notice {
+      max-width: 760px;
+      margin: 30px 0 0;
+      padding: 18px 20px;
+      border-left: 4px solid var(--accent);
+      background: #edf7f3;
+      color: #183f35;
+    }
+
+    .notice strong { color: #10352c; }
+    .button {
+      display: inline-block;
+      margin-top: 28px;
+      padding: 13px 20px;
+      border-radius: 5px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      line-height: 1.25;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .button:hover, .button:focus-visible { background: var(--accent-dark); }
+    section { padding: 58px 0; }
+    section:nth-of-type(even) { background: var(--surface); }
+    h2 {
+      margin: 0;
+      font-size: clamp(1.5rem, 3vw, 2.1rem);
+      letter-spacing: -.02em;
+    }
+
+    .section-intro { max-width: 720px; margin: 14px 0 0; color: var(--muted); }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+    }
+
+    .card h3 { margin: 0 0 8px; font-size: 1.03rem; }
+    .card p { margin: 0; color: var(--muted); }
+    .steps {
+      display: grid;
+      gap: 0;
+      margin: 28px 0 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: step;
+      border-top: 1px solid var(--line);
+    }
+
+    .steps li {
+      position: relative;
+      padding: 20px 12px 20px 58px;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      counter-increment: step;
+    }
+
+    .steps li::before {
+      position: absolute;
+      top: 18px;
+      left: 0;
+      display: grid;
+      width: 38px;
+      height: 38px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--ink);
+      color: #fff;
+      content: counter(step);
+      font-size: .9rem;
+      font-weight: 700;
+    }
+
+    .steps strong { color: var(--ink); }
+    .commitment {
+      margin: 28px 0 0;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+    }
+
+    .commitment ul { margin: 14px 0 0; padding-left: 21px; }
+    .commitment li + li { margin-top: 8px; }
+    .faq { margin: 25px 0 0; border-top: 1px solid var(--line); }
+    details { border-bottom: 1px solid var(--line); }
+    summary { padding: 17px 0; cursor: pointer; font-weight: 700; }
+    details p { margin: 0 0 17px; color: var(--muted); }
+    .contact { text-align: center; }
+    .contact .section-intro { margin-right: auto; margin-left: auto; }
+    .contact .button { margin-top: 24px; }
+    .small-contact { margin: 18px 0 0; color: var(--muted); font-size: .94rem; }
+    .small-contact a { color: var(--accent-dark); }
+    footer {
+      padding: 26px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .87rem;
+    }
+
+    footer p { margin: 4px 0; }
+
+    @media (max-width: 620px) {
+      .container { width: min(100% - 32px, 920px); }
+      .header-content { min-height: 64px; }
+      .header-link { font-size: .86rem; }
+      .hero { padding: 54px 0 42px; }
+      section { padding: 44px 0; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-
-<div id="spotlight"></div>
-<div class="progress-bar" id="progressBar"></div>
-
-<header id="siteHeader">
-  <div class="nav-wrap">
-    <a href="#inicio" class="brand">
-      <img src="assets/logo.png" alt="Estudo Pra Você" class="brand-logo">
-      <span class="brand-text">Estudo Pra Você<span>Mentoria em estudos acadêmicos</span></span>
-    </a>
-    <nav>
-      <ul>
-        <li><a href="#como-funciona">Como funciona</a></li>
-        <li><a href="#faculdades">Cobertura</a></li>
-        <li><a href="#autoria">Autoria</a></li>
-        <li><a href="#perguntas">Dúvidas</a></li>
-      </ul>
-    </nav>
-    <div class="nav-cta">
-      <a href="#orcamento" class="btn btn-primary magnetic">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.1c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.12.11-1.8-.11-.42-.13-.95-.31-1.64-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.26-.28.57-.35.76-.35h.55c.18 0 .42-.07.65.5.24.58.82 2 .89 2.15.07.15.12.32.02.51-.09.19-.14.31-.28.48-.14.16-.29.36-.42.49-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.89 1.05.94 1.94 1.23 2.22 1.37.28.14.45.12.61-.07.17-.19.71-.83.9-1.11.19-.28.38-.23.63-.14.26.09 1.65.78 1.94.92.28.14.47.21.54.33.07.12.07.68-.17 1.36Z"/></svg>
-        Pedir orientação
-      </a>
-      <button class="menu-toggle" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+  <header class="site-header">
+    <div class="container header-content">
+      <a class="brand" href="#inicio" aria-label="Estudo Pra Você - início">Estudo Pra Você</a>
+      <a class="header-link" href="#como-funciona">Como funciona</a>
     </div>
-  </div>
-</header>
+  </header>
 
-<section class="hero" id="inicio">
-  <div class="container hero-grid">
-    <div class="blob blob-navy pulse-blob" data-parallax="0.15" style="width:520px; height:520px; top:-150px; left:-200px; opacity:.42;"></div>
-    <div class="blob blob-amber fast-blob" data-parallax="0.28" style="width:340px; height:340px; bottom:60px; right:-90px; opacity:.28;"></div>
-    <div>
-      <span class="eyebrow reveal">Mentoria · Estudo · Planejamento</span>
-      <span class="hero-pill reveal">Orientação de estudo e aprendizagem</span>
-<h1 class="reveal">Seus estudos, com orientação em cada etapa.</h1>
-      <p class="lede reveal">Você desenvolve e entrega seus próprios estudos. Nós ajudamos você a entender as orientações da instituição, planejar as etapas e receber feedback sobre o conteúdo que produziu.</p>
-      <p class="scope-note reveal"><strong>A autoria é sua.</strong> Não escrevemos, executamos, enviamos nem entregamos estudos, provas ou atividades avaliativas em nome do estudante. A mentoria oferece explicações, planejamento e feedback sobre o seu próprio conteúdo.</p>
-      <ul class="hero-trust reveal">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Plano de estudo personalizado pro seu tema e sua faculdade</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Feedback para você revisar o conteúdo que escreveu</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Atendimento direto com a gente, sem intermediário</li>
-      </ul>
-
-    </div>
-
-    <div id="orcamento" class="lead-card reveal tilt">
-      <div class="lead-card-head">
-        <h2>Pedir diagnóstico gratuito</h2>
-        <p>Clique no botão abaixo e fale direto no WhatsApp. O diagnóstico inicial é gratuito; o valor da mentoria é combinado antes da contratação.</p>
+  <main id="inicio">
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Mentoria acadêmica</p>
+        <h1>Orientação para você desenvolver seus próprios estudos.</h1>
+        <p class="lead">A Estudo Pra Você orienta estudantes na interpretação de orientações acadêmicas, no planejamento de etapas e na melhoria de conteúdos elaborados pelo próprio estudante.</p>
+        <p class="notice"><strong>A autoria é sempre do estudante.</strong> Não escrevemos, realizamos, enviamos ou entregamos estudos, provas ou atividades avaliativas em nome de outra pessoa.</p>
+        <a class="button" href="https://wa.me/5531997813322?text=Ol%C3%A1%21%20Quero%20entender%20como%20funciona%20a%20mentoria%20acad%C3%AAmica%20para%20desenvolver%20meus%20pr%C3%B3prios%20estudos." target="_blank" rel="noopener noreferrer">Falar sobre mentoria no WhatsApp</a>
       </div>
-      <a href="https://wa.me/5531997813322?text=Oi%2C%20preciso%20de%20orienta%C3%A7%C3%A3o%20com%20meus%20estudos%20acad%C3%AAmicos."
-         class="btn btn-primary btn-block magnetic"
-         target="_blank"
-         rel="noopener"
-         onclick="gtag('event', 'conversion', {'send_to': 'AW-18025628982/lm1fCNKawescELaKpZND'});">
-        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.1c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.12.11-1.8-.11-.42-.13-.95-.31-1.64-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.26-.28.57-.35.76-.35h.55c.18 0 .42-.07.65.5.24.58.82 2 .89 2.15.07.15.12.32.02.51-.09.19-.14.31-.28.48-.14.16-.29.36-.42.49-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.89 1.05.94 1.94 1.23 2.22 1.37.28.14.45.12.61-.07.17-.19.71-.83.9-1.11.19-.28.38-.23.63-.14.26.09 1.65.78 1.94.92.28.14.47.21.54.33.07.12.07.68-.17 1.36Z"/></svg>
-        Conversar no WhatsApp
-      </a>
-      <p class="lead-note">Sem compromisso. Primeira conversa de diagnóstico é gratuita.</p>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ============================================== -->
-<!-- BOTÃO WHATSAPP COM RASTREAMENTO DE CONVERSÃO   -->
-<!-- COMPLETO E PRONTO PARA USO                     -->
-<!-- Cole este código no "Incorporar" do Google      -->
-<!-- Sites (Inserir → Incorporar → Incorporar código)-->
-<!-- ============================================== -->
-
-
-
-<!-- Google tag (gtag.js) - só pra esse bloco -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18025628982"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'AW-18025628982');
-
-  function gtag_report_conversion(url) {
-    var callback = function () {
-      if (typeof(url) != 'undefined') {
-        window.open(url, '_blank');
-      }
-    };
-    gtag('event', 'conversion', {
-        'send_to': 'AW-18025628982/nyR5CLn26d8cELaKpZND',
-        'event_callback': callback
-    });
-    return false;
-  }
-</script>
-<div class="marquee-section">
-  <div class="marquee-label">Mentoria independente para estudantes de diferentes instituições do Brasil</div>
-  <div class="marquee-track-wrap">
-    <div class="marquee-track" id="marqueeTrack">
-      <span class="marquee-badge">Bacharelado</span>
-      <span class="marquee-badge">Tecnólogo</span>
-      <span class="marquee-badge">Licenciatura</span>
-      <span class="marquee-badge">Pós-graduação</span>
-      <span class="marquee-badge">EAD</span>
-      <span class="marquee-badge">Semipresencial</span>
-      <span class="marquee-badge">Presencial</span>
-      <span class="marquee-badge">Instituições públicas</span>
-      <span class="marquee-badge">Instituições privadas</span>
-      <span class="marquee-badge">Bacharelado</span>
-      <span class="marquee-badge">Tecnólogo</span>
-      <span class="marquee-badge">Licenciatura</span>
-      <span class="marquee-badge">Pós-graduação</span>
-      <span class="marquee-badge">EAD</span>
-      <span class="marquee-badge">Semipresencial</span>
-      <span class="marquee-badge">Presencial</span>
-      <span class="marquee-badge">Instituições públicas</span>
-      <span class="marquee-badge">Instituições privadas</span>
-    </div>
-  </div>
-</div>
-
-<section id="problema">
-  <div class="container">
-    <div class="sem-tempo">
-      <div class="section-head center reveal">
-        <span class="eyebrow" style="justify-content:center;"><span class="dot"></span>O cenário mais comum</span>
-        <h2>Dúvidas para planejar ou desenvolver seus estudos?</h2>
-        <p>A mentoria ajuda a compreender as orientações da faculdade, organizar os estudos e avançar com autonomia.</p>
-      </div>
-      <div class="problem-grid reveal">
-        <div class="problem-card"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span><p>Você precisa entender as etapas e montar um plano para realizar seus próprios estudos.</p></div>
-        <div class="problem-card"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 17h.01M12 13.5a1.5 1.5 0 0 1 1-1.4c.7-.3 1.5-.9 1.5-1.9a2.5 2.5 0 0 0-5 0"/><circle cx="12" cy="12" r="9"/></svg></span><p>O regulamento é confuso e ninguém explica direito o que é esperado.</p></div>
-        <div class="problem-card"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 21c0-4 4-6 8-6s8 2 8 6M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/></svg></span><p>Você quer aprender a localizar fontes e organizar suas próprias ideias.</p></div>
-        <div class="problem-card"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.3 3.9 2.3 18a1.6 1.6 0 0 0 1.4 2.5h16.6a1.6 1.6 0 0 0 1.4-2.5l-8-14a1.6 1.6 0 0 0-2.8 0Z"/></svg></span><p>Insegurança sobre normas, formatação e como estruturar o estudo do zero.</p></div>
-        </div>
-          <!-- <p class="reveal" style="margin-top:20px; font-weight:600; color:var(--ink);">Pagamento no Pix ou no Cartão de Crédito.</p> -->
-
-    </div>
-
-
-<section class="soft" id="como-funciona">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow"><span class="dot"></span>Planejamento e feedback sobre o que você desenvolveu</span>
-      <h2>Como funciona a mentoria</h2>
-      <p>Um processo de orientação para você desenvolver seus próprios estudos com autonomia.</p>
-    </div>
-    <div class="steps">
-      <div class="step-card reveal tilt">
-        <div class="step-num">01</div>
-        <h3>Você chama a gente no WhatsApp</h3>
-        <p>Conta o curso, a instituição, o tema (se já tiver) e o prazo da disciplina.</p>
-      </div>
-      <div class="step-card reveal tilt">
-        <div class="step-num">02</div>
-        <h3>Entendemos sua necessidade</h3>
-        <p>Conversamos sobre o que a instituição pede e sobre o que você já desenvolveu.</p>
-      </div>
-      <div class="step-card reveal tilt">
-        <div class="step-num">03</div>
-        <h3>Montamos seu plano de estudo</h3>
-        <p>Dividido em etapas, com prazos e checkpoints pra você seguir com clareza.</p>
-      </div>
-      <div class="step-card reveal tilt">
-        <div class="step-num">04</div>
-        <h3>Você desenvolve, a gente orienta</h3>
-        <p>Acompanhamos e damos feedback do que você for produzindo em cada etapa.</p>
-      </div>
-      <div class="step-card reveal tilt">
-        <div class="step-num">05</div>
-        <h3>Feedback final sobre seu texto</h3>
-        <p>Apontamos ajustes de formatação, normas ABNT e estrutura para você aplicar antes de enviar.</p>
-      </div>
-      <div class="step-card reveal tilt">
-        <div class="step-num">06</div>
-        <h3>Se houver ajuste, orientamos você</h3>
-        <p>Se a instituição pedir alteração, damos feedback para você revisar seu próprio estudo dentro do escopo combinado.</p>
-      </div>
-    </div>
-  </div>
-
-</section>
-
-<section id="servicos">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow"><span class="dot"></span>Como ajudamos</span>
-      <h2>Mentoria para desenvolver seus próprios estudos acadêmicos</h2>
-    </div>
-    <div class="service-grid reveal">
-      <div class="service-card tilt"><span class="service-num">01</span><h3>Estudo comunitário</h3><p>Orientação para você planejar e realizar cada etapa, com plano de estudo e feedback sobre o que desenvolveu.</p></div>
-      <div class="service-card tilt"><span class="service-num">02</span><h3>Estudo interdisciplinar</h3><p>Orientação para você relacionar disciplinas conforme as instruções da instituição.</p></div>
-      <div class="service-card tilt"><span class="service-num">03</span><h3>Estudo de conclusão de curso</h3><p>Orientação para você definir o tema, estruturar e formatar seu próprio texto conforme as normas da instituição.</p></div>
-      <div class="service-card tilt"><span class="service-num">04</span><h3>Portfólio de aprendizagem</h3><p>Orientação para você organizar, produzir com autoria e citar fontes.</p></div>
-      <div class="service-card tilt"><span class="service-num">05</span><h3>Normas e metodologia científica</h3><p>Orientação sobre estrutura, citações e normas ABNT para você aplicar no seu texto.</p></div>
-      <div class="service-card tilt"><span class="service-num">06</span><h3>Orientação acadêmica do estudo</h3><p>Orientação para você organizar e desenvolver seu estudo.</p></div>
-    </div>
-  </div>
-
-</section>
-
-<section class="soft" id="faculdades">
-  <div class="container">
-    <div class="section-head center reveal">
-      <span class="eyebrow" style="justify-content:center;"><span class="dot"></span>Cobertura de atendimento</span>
-      <h2>Orientação conforme as regras da sua instituição</h2>
-      <p>Atendimento independente, sem vínculo ou parceria com instituições de ensino. Consulte as regras da sua faculdade sobre apoio externo; a orientação não substitui seu professor ou orientador.</p>
-    </div>
-    <div class="stag more-fac reveal">
-      <span class="fac-chip">Instituições públicas</span>
-      <span class="fac-chip">Instituições privadas</span>
-      <span class="fac-chip">EAD</span>
-      <span class="fac-chip">Semipresencial</span>
-      <span class="fac-chip">Presencial</span>
-      <span class="fac-chip">Pós-graduação</span>
-    </div>
-  </div>
-
-</section>
-
-<section id="areas">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow"><span class="dot"></span>Áreas atendidas</span>
-      <h2>Orientação para diferentes áreas de formação</h2>
-      <p>Atendemos estudantes de várias áreas, com orientação adaptada ao seu curso e às diretrizes da sua instituição.</p>
-    </div>
-    <div class="service-grid reveal">
-      <div class="service-card tilt"><span class="service-num">01</span><h3>Saúde</h3><p>Enfermagem, Fisioterapia, Nutrição, Farmácia, Biomedicina e áreas correlatas.</p></div>
-      <div class="service-card tilt"><span class="service-num">02</span><h3>Comunicação, Design e Audiovisual</h3><p>Publicidade, Design, Jornalismo, Produção Audiovisual e áreas correlatas.</p></div>
-      <div class="service-card tilt"><span class="service-num">03</span><h3>Engenharias</h3><p>Civil, Produção, Elétrica, Mecânica e áreas correlatas.</p></div>
-      <div class="service-card tilt"><span class="service-num">04</span><h3>Administração e Negócios</h3><p>Administração, Marketing, Logística, Gestão e áreas correlatas.</p></div>
-      <div class="service-card tilt"><span class="service-num">05</span><h3>Educação e Licenciaturas</h3><p>Pedagogia, Letras, Matemática e demais licenciaturas.</p></div>
-      <div class="service-card tilt"><span class="service-num">06</span><h3>Direito e Segurança</h3><p>Direito e áreas relacionadas à segurança pública.</p></div>
-      <div class="service-card tilt"><span class="service-num">07</span><h3>Tecnologia e Computação</h3><p>ADS, Ciência da Computação, Engenharia de Software e áreas correlatas.</p></div>
-      <div class="service-card tilt"><span class="service-num">08</span><h3>Humanas e Sociais</h3><p>Ciências Contábeis, Relações Internacionais, Serviço Social e áreas correlatas.</p></div>
-    </div>
-  </div>
-
-</section>
-
-<section class="soft" id="autoria">
-  <div class="container">
-    <div class="section-head center reveal">
-      <span class="eyebrow"><span class="dot"></span>Autoria e aprendizagem</span>
-      <h2>Seu estudo continua sendo seu</h2>
-      <p>A mentoria ajuda você a compreender o processo e desenvolver autonomia. O desenvolvimento e a entrega são realizados pelo estudante.</p>
-    </div>
-    <div class="steps">
-      <div class="step-card reveal"><h3>Orientação e revisão</h3><p>Explicamos conceitos, organizamos um plano de estudo e damos feedback sobre o conteúdo que você produziu, incluindo estrutura, citações e formatação.</p></div>
-      <div class="step-card reveal"><h3>Responsabilidade do aluno</h3><p>Você realiza as atividades práticas, produz os registros e desenvolve o seu estudo. Não vendemos estudos prontos, não fazemos provas e não executamos atividades avaliativas por você.</p></div>
-      <div class="step-card reveal"><h3>Sem promessa de nota</h3><p>Não garantimos aprovação, nota ou aceite pela instituição. A avaliação cabe à faculdade e depende do seu estudo e dos critérios acadêmicos.</p></div>
-    </div>
-  </div>
-
-</section>
-
-<section id="diferenciais">
-  <div class="container">
-    <div class="section-head center reveal">
-      <span class="eyebrow" style="justify-content:center;"><span class="dot"></span>O que a mentoria oferece</span>
-      <h2>O que a mentoria inclui</h2>
-    </div>
-    <div class="guarantee-grid reveal">
-      <div class="guarantee-card tilt"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span><div><h3>Orientação ao longo do processo</h3><p>Combinamos o formato antes e oferecemos sessões de orientação enquanto você desenvolve seus estudos.</p></div></div>
-      <div class="guarantee-card tilt"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9M3 12l3-3M3 12l3 3"/></svg></span><div><h3>Feedback sem custo adicional</h3><p>Se a instituição solicitar ajustes, damos feedback para você revisar e aplicar as mudanças no seu próprio estudo.</p></div></div>
-      <div class="guarantee-card tilt"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span><div><h3>Atendimento direto com a gente</h3><p>Sem intermediários nem central de suporte, atendimento direto no WhatsApp.</p></div></div>
-      <div class="guarantee-card tilt"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></svg></span><div><h3>Cronograma de orientação</h3><p>Combinamos os prazos das orientações e dos feedbacks. O desenvolvimento e a entrega do estudo são realizados por você.</p></div></div>
-    </div>
-  </div>
-
-</section>
-
-<section class="soft" id="perguntas">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow"><span class="dot"></span>Perguntas frequentes</span>
-      <h2>Fique ainda mais por dentro!</h2>
-    </div>
-    <div class="faq-list reveal">
-      <div class="faq-item">
-        <button class="faq-q"><span class="txt">Como funciona o pagamento?</span><span class="plus">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Combinamos o valor e o formato do acompanhamento antes de começar. Você acompanha o andamento junto com a gente e paga conforme o combinado. Pagamento pode ser feito via PIX ou cartão de crédito.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q"><span class="txt">Quanto tempo demora?</span><span class="plus">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Depende do seu ritmo e do prazo que você tem disponível. Montamos um cronograma realista já na primeira conversa.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q"><span class="txt">Atende qualquer curso e faculdade?</span><span class="plus">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Sim. Atendemos alunos de diversas áreas, em instituições públicas ou privadas, presenciais, semipresenciais ou EAD. Veja as áreas atendidas acima.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q"><span class="txt">E se a faculdade pedir revisão?</span><span class="plus">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Damos feedback para você revisar seu próprio estudo, dentro do escopo e das condições combinadas. Você aplica os ajustes.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q"><span class="txt">Quem realiza o estudo?</span><span class="plus">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Você é responsável pelo desenvolvimento, pelas atividades práticas e pela entrega. Nosso serviço oferece orientação, explicações e feedback sobre o conteúdo que você produz. Não escrevemos, executamos, enviamos nem entregamos estudos, provas ou atividades avaliativas em seu nome.</div></div>
-      </div>
-    </div>
-  </div>
-
-</section>
-
-<section>
-  <div class="container">
-    <div class="final-cta reveal">
-      <div class="final-cta-inner">
-        <span class="eyebrow">VAMOS PLANEJAR SEUS ESTUDOS?</span>
-        <h2>Converse sobre seus estudos e planeje os próximos passos.</h2>
-        <p>Chama no WhatsApp pra montar seu plano, sem compromisso.</p>
-        <a href="https://wa.me/5531997813322?text=Oi%2C%20preciso%20de%20orienta%C3%A7%C3%A3o%20com%20meus%20estudos%20acad%C3%AAmicos."
-   class="btn btn-primary magnetic"
-   target="_blank"
-   rel="noopener"
-   onclick="gtag('event', 'conversion', {'send_to': 'AW-18025628982/lm1fCNKawescELaKpZND'});">
-  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.1c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.12.11-1.8-.11-.42-.13-.95-.31-1.64-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.26-.28.57-.35.76-.35h.55c.18 0 .42-.07.65.5.24.58.82 2 .89 2.15.07.15.12.32.02.51-.09.19-.14.31-.28.48-.14.16-.29.36-.42.49-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.89 1.05.94 1.94 1.23 2.22 1.37.28.14.45.12.61-.07.17-.19.71-.83.9-1.11.19-.28.38-.23.63-.14.26.09 1.65.78 1.94.92.28.14.47.21.54.33.07.12.07.68-.17 1.36Z"/></svg>
-  Falar com a gente no WhatsApp
-</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="container">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <img src="assets/logo.png" alt="Estudo Pra Você" class="footer-logo">
-        <div>
-          <div class="footer-brand-text">Estudo Pra Você</div>
-          <div style="font-size:12px; margin-top:4px; color:var(--ink-faint);">Mentoria e orientação personalizada para estudos acadêmicos</div>
-          <div style="font-size:12px; margin-top:8px; color:var(--ink-soft);"><a href="tel:+5531997813322">(31) 99781-3322</a> · <a href="mailto:estudopravoce@gmail.com">estudopravoce@gmail.com</a></div>
+    <section aria-labelledby="oferecemos">
+      <div class="container">
+        <h2 id="oferecemos">O que a mentoria oferece</h2>
+        <p class="section-intro">O serviço é educacional e orientativo: a pessoa mentora explica caminhos e critérios, enquanto o estudante toma decisões, produz o conteúdo e aplica os ajustes.</p>
+        <div class="grid">
+          <article class="card">
+            <h3>Leitura das orientações</h3>
+            <p>Ajuda para compreender o enunciado, o objetivo, os critérios e as etapas solicitadas pela instituição.</p>
+          </article>
+          <article class="card">
+            <h3>Planejamento de estudos</h3>
+            <p>Organização de prioridades, cronograma pessoal e próximos passos para o estudante conduzir seu processo.</p>
+          </article>
+          <article class="card">
+            <h3>Explicações e referências</h3>
+            <p>Explicação de conceitos, métodos e boas práticas para que o estudante entenda o que está fazendo.</p>
+          </article>
+          <article class="card">
+            <h3>Feedback educativo</h3>
+            <p>Comentários sobre clareza, estrutura e pontos de melhoria de um conteúdo que o próprio estudante já produziu.</p>
+          </article>
         </div>
       </div>
-      <div class="footer-cols">
-        <div class="footer-col">
-          <h3>Navegação</h3>
+    </section>
+
+    <section id="como-funciona" aria-labelledby="titulo-como-funciona">
+      <div class="container">
+        <h2 id="titulo-como-funciona">Como funciona</h2>
+        <p class="section-intro">A mentoria é uma orientação para aprendizagem. O estudante permanece responsável pelo desenvolvimento e pela entrega de qualquer atividade acadêmica.</p>
+        <ol class="steps">
+          <li><strong>Você apresenta sua necessidade de aprendizagem.</strong> Conversamos sobre o tema, a etapa do curso e as orientações que precisam ser compreendidas.</li>
+          <li><strong>Recebe uma orientação de caminho.</strong> A mentoria ajuda a transformar as orientações em um plano de estudo e desenvolvimento.</li>
+          <li><strong>Você desenvolve o seu conteúdo.</strong> As escolhas, a escrita, a execução e a autoria são integralmente suas.</li>
+          <li><strong>Você pode receber feedback educativo.</strong> Os comentários apontam aspectos para você avaliar e aprimorar por conta própria.</li>
+          <li><strong>Você decide e aplica os ajustes.</strong> A versão final e qualquer envio à instituição são de responsabilidade exclusiva do estudante.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section aria-labelledby="compromisso">
+      <div class="container">
+        <h2 id="compromisso">Compromisso com autoria e integridade acadêmica</h2>
+        <p class="section-intro">A Estudo Pra Você atua para apoiar o aprendizado, respeitando as regras da instituição de ensino e a responsabilidade individual de cada estudante.</p>
+        <div class="commitment">
+          <strong>Limites claros do serviço</strong>
           <ul>
-            <li><a href="#como-funciona">Como funciona</a></li>
-            <li><a href="#faculdades">Cobertura</a></li>
-            <li><a href="#autoria">Autoria</a></li>
-            <li><a href="#perguntas">Dúvidas</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h3>Contato</h3>
-          <ul>
-            <li><a href="https://wa.me/5531997813322" target="_blank" rel="noopener">WhatsApp</a></li>
-            <li><a href="tel:+5531997813322">(31) 99781-3322</a></li>
-            <li><a href="mailto:estudopravoce@gmail.com">estudopravoce@gmail.com</a></li>
-            <li><span>Atendimento remoto, em todo o Brasil</span></li>
+            <li>Não produzimos atividades avaliativas para serem apresentadas como autoria do estudante.</li>
+            <li>Não realizamos provas, envios, cadastros ou qualquer ação acadêmica em nome do estudante.</li>
+            <li>Não prometemos aprovação, notas, prazos ou resultados acadêmicos.</li>
+            <li>O estudante deve conferir e seguir as regras específicas da sua instituição e disciplina.</li>
           </ul>
         </div>
       </div>
+    </section>
+
+    <section aria-labelledby="perguntas">
+      <div class="container">
+        <h2 id="perguntas">Perguntas frequentes</h2>
+        <div class="faq">
+          <details>
+            <summary>Quem desenvolve e entrega a atividade acadêmica?</summary>
+            <p>O estudante. A mentoria não substitui a autoria, a execução, as decisões ou o envio pelo estudante.</p>
+          </details>
+          <details>
+            <summary>A Estudo Pra Você faz atividades ou provas?</summary>
+            <p>Não. O serviço é de orientação educacional, planejamento, explicação e feedback sobre conteúdo desenvolvido pelo próprio estudante.</p>
+          </details>
+          <details>
+            <summary>Como funciona o feedback?</summary>
+            <p>A mentoria pode indicar pontos de clareza, estrutura ou entendimento para o estudante analisar. As alterações são feitas pelo próprio estudante.</p>
+          </details>
+          <details>
+            <summary>Existe garantia de nota ou aprovação?</summary>
+            <p>Não. O desempenho acadêmico depende do trabalho do estudante, dos critérios da instituição e de outros fatores fora do controle da mentoria.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" aria-labelledby="contato">
+      <div class="container">
+        <h2 id="contato">Quer entender se a mentoria é adequada para você?</h2>
+        <p class="section-intro">Fale conosco para conhecer o formato de orientação e esclarecer dúvidas sobre o processo de aprendizagem.</p>
+        <a class="button" href="https://wa.me/5531997813322?text=Ol%C3%A1%21%20Quero%20entender%20como%20funciona%20a%20mentoria%20acad%C3%AAmica%20para%20desenvolver%20meus%20pr%C3%B3prios%20estudos." target="_blank" rel="noopener noreferrer">Conversar pelo WhatsApp</a>
+        <p class="small-contact">Ou envie um e-mail para <a href="mailto:estudopravoce@gmail.com">estudopravoce@gmail.com</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p><strong>Estudo Pra Você</strong> — Mentoria acadêmica e orientação para aprendizagem.</p>
+      <p>Serviço independente, sem vínculo com instituições de ensino.</p>
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 Estudo Pra Você. Todos os direitos reservados.</span>
-      <div><span>Feito por</span> <a href="https://marcoumweb.com" target="_blank" rel="noopener noreferrer"><span style="color:black; font-weight:700;">Marco</span> <span style="color:var(--red); font-weight:700;">Um</span></a></div>
-
-      <span>Serviço independente e autônomo. Sem vínculo com instituições de ensino.</span>
-    </div>
-  </div>
-</footer>
-
-<a href="https://wa.me/5531997813322?text=Oi%2C%20preciso%20de%20orienta%C3%A7%C3%A3o%20com%20meus%20estudos%20acad%C3%AAmicos."
-   class="fab magnetic"
-   target="_blank"
-   rel="noopener"
-   aria-label="Chamar no WhatsApp"
-   onclick="gtag('event', 'conversion', {'send_to': 'AW-18025628982/lm1fCNKawescELaKpZND'});">
-  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.1c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.12.11-1.8-.11-.42-.13-.95-.31-1.64-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.26-.28.57-.35.76-.35h.55c.18 0 .42-.07.65.5.24.58.82 2 .89 2.15.07.15.12.32.02.51-.09.19-.14.31-.28.48-.14.16-.29.36-.42.49-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.89 1.05.94 1.94 1.23 2.22 1.37.28.14.45.12.61-.07.17-.19.71-.83.9-1.11.19-.28.38-.23.63-.14.26.09 1.65.78 1.94.92.28.14.47.21.54.33.07.12.07.68-.17 1.36Z"/></svg>
-</a>
-
-<script>
-  /* ---------- Progress bar ---------- */
-  const progressBar = document.getElementById('progressBar');
-  window.addEventListener('scroll', () => {
-    const h = document.documentElement;
-    const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
-    progressBar.style.width = scrolled + '%';
-  });
-
-  /* ---------- Header hide/show + shrink ---------- */
-  const header = document.getElementById('siteHeader');
-  let lastScroll = 0;
-  window.addEventListener('scroll', () => {
-    const cur = window.scrollY;
-    header.classList.toggle('scrolled', cur > 10);
-    if(cur > lastScroll && cur > 140 && !navUl.classList.contains('open')){ header.classList.add('hide'); }
-    else{ header.classList.remove('hide'); }
-    lastScroll = cur;
-  });
-
-  /* ---------- Mobile menu ---------- */
-  const toggle = document.querySelector('.menu-toggle');
-  const navUl = document.querySelector('nav ul');
-  function closeMenu(){
-    navUl.classList.remove('open');
-    toggle.classList.remove('open');
-    toggle.setAttribute('aria-label', 'Abrir menu');
-    document.body.classList.remove('menu-open');
-  }
-  toggle.addEventListener('click', () => {
-    const isOpen = navUl.classList.contains('open');
-    if(isOpen){ closeMenu(); return; }
-    navUl.classList.add('open');
-    toggle.classList.add('open');
-    toggle.setAttribute('aria-label', 'Fechar menu');
-    document.body.classList.add('menu-open');
-  });
-  document.querySelectorAll('nav ul a').forEach(a => a.addEventListener('click', closeMenu));
-  document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeMenu(); });
-
-  /* ---------- Accordions ---------- */
-  function setupAccordion(itemSelector, answerSelector, openClass, scope){
-    scope.querySelectorAll(itemSelector).forEach(item => {
-      const q = item.querySelector('button');
-      const a = item.querySelector(answerSelector);
-      q.addEventListener('click', () => {
-        const isOpen = item.classList.contains(openClass);
-        item.parentElement.querySelectorAll(itemSelector + '.' + openClass).forEach(o => {
-          o.classList.remove(openClass);
-          o.querySelector(answerSelector).style.maxHeight = null;
-        });
-        if(!isOpen){
-          item.classList.add(openClass);
-          a.style.maxHeight = a.scrollHeight + 'px';
-        }
-      });
-    });
-  }
-  setupAccordion('.faq-item', '.faq-a', 'open', document);
-  setupAccordion('.ledger-row', '.ledger-a', 'open', document);
-
-  /* ---------- Counters ---------- */
-  const counters = document.querySelectorAll('.counter');
-  const counterIO = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        const el = entry.target;
-        const target = parseInt(el.dataset.target, 10);
-        const duration = 1200;
-        const start = performance.now();
-        function tick(now){
-          const p = Math.min((now - start) / duration, 1);
-          const eased = 1 - Math.pow(1 - p, 3);
-          el.textContent = Math.round(eased * target);
-          if(p < 1) requestAnimationFrame(tick);
-        }
-        requestAnimationFrame(tick);
-        counterIO.unobserve(el);
-      }
-    });
-  }, { threshold: 0.5 });
-  counters.forEach(c => counterIO.observe(c));
-
-  /* ---------- Lead form (removed - CTA only) ---------- */
-
-  /* ---------- Parallax blobs (safe, throttled) ---------- */
-  (function(){
-    try{
-      if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      const blobs = document.querySelectorAll('[data-parallax]');
-      if(!blobs.length) return;
-      let ticking = false;
-      window.addEventListener('scroll', () => {
-        if(ticking) return;
-        ticking = true;
-        const scrollY = window.scrollY;
-        blobs.forEach(el => {
-          const speed = parseFloat(el.getAttribute('data-parallax')) || 0;
-          const y = scrollY * speed;
-          el.style.transform = 'translateY(' + y + 'px)';
-        });
-        ticking = false;
-      });
-    }catch(e){ /* parallax never blocks render */ }
-  })();
-
-  /* ---------- Scroll reveal ---------- */
-  const revealEls = document.querySelectorAll('.reveal');
-  if('IntersectionObserver' in window){
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); }
-      });
-    }, { threshold: 0.12 });
-    revealEls.forEach(el => io.observe(el));
-  } else {
-    revealEls.forEach(el => el.classList.add('is-visible'));
-  }
-
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Estudo Pra Você",
-  "description": "Mentoria acadêmica para o estudante desenvolver seus próprios estudos, com planejamento, explicações e feedback sobre o conteúdo produzido por ele. Não escrevemos, executamos, enviamos nem entregamos estudos, provas ou atividades avaliativas em nome do estudante.",
-  "url": "https://estudopravoce.com/",
-  "image": "https://estudopravoce.com/assets/image.png",
-  "telephone": "+5531997813322",
-  "email": "estudopravoce@gmail.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Belo Horizonte",
-    "addressRegion": "MG",
-    "addressCountry": "BR"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": -19.9167,
-    "longitude": -43.9345
-  },
-  "areaServed": {
-    "@type": "Country",
-    "name": "Brasil"
-  },
-  "priceRange": "$$",
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday"
-    ],
-    "opens": "09:00",
-    "closes": "21:00"
-  },
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Mentoria acadêmica",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Orientação em estudos acadêmicos"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Orientação em estudos interdisciplinares"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Orientação de estudo de conclusão de curso"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Orientação em estudos de extensão"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Acompanhamento de estágio supervisionado"
-        }
-      }
-    ]
-  }
-}
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Como funciona o pagamento?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Combinamos o valor e o formato do acompanhamento antes de começar. Você acompanha o andamento junto com a gente e paga conforme o combinado. Pagamento pode ser feito via PIX ou cartão de crédito."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Quanto tempo demora?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Depende do seu ritmo e do prazo que você tem disponível. Montamos um cronograma realista já na primeira conversa."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Atende qualquer curso e faculdade?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sim. Atendemos alunos de diversas áreas, em instituições públicas ou privadas, presenciais, semipresenciais ou EAD."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "E se a faculdade pedir revisão?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Damos feedback para você revisar seu próprio estudo, dentro do escopo e das condições combinadas. Você aplica os ajustes."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Quem realiza o estudo?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Você é responsável pelo desenvolvimento, pelas atividades práticas e pela entrega. Nosso serviço oferece orientação, explicações e feedback sobre o conteúdo que você produz. Não escrevemos, executamos, enviamos nem entregamos estudos, provas ou atividades avaliativas em seu nome."
-      }
-    }
-  ]
-}
-</script>
-
+  </footer>
 </body>
 </html>

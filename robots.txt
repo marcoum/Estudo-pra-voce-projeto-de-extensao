@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /index.html.bak
 
 Sitemap: https://estudopravoce.com/sitemap.xml
